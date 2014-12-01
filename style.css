@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.LeerlingenContainer {
+    width: 80vw;
+    height: 60vh;
+    overflow-y: auto;
+}
+
+.LeerlingenContainer .Leerling:before,
+.LeerlingenContainer .Leerling:after {
+    content: " ";
+    display: table;
+}
+
+.LeerlingenContainer .Leerling:after {
+    clear: both;
+}
+
+.Leerling {
+    margin: 5px;
+    display: inline-block;
+    /**
+     * @padding: 5px;
+     * @kolommen: 4;
+     * (breedte / @kolommen) - (2 * @padding)
+     */
+    word-wrap: break-word;
+    width: calc((100% / 4) - (2 * 5px));
+    height: 100px;
+}
+
+.foto-leerling {
+    margin: 4px;
+    width: 60px;
+    height: 80px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    float: left;
+}
+
+.leerlingNummer {
+    font-size: .9em;
+    color: rgb(190, 190, 190);
+}
+
+.email {
+    color: rgb(150, 150, 150);
+}
+
+.foto-leraar {
+    width: 60px;
+    height: 80px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+}
+
+.aandacht {
+    color: rgb(20, 180, 70);
+    font-weight: bold;
+    font-size: .9em;
+}
+
+#leerlingen {
+    position: absolute;
+    width: 80vw;
+    height: 60vh;
+    border: 2px dotted orangered;
+}
+
+#leraren {
+    position: absolute;
+    right: 0;
+    border: 2px dotted blue;
+    width: 18vw;
+    height: 60vh;
+}
+
+#statistiek {
+    position: absolute;
+    width: 60vw;
+    height: 37vh;
+    border: 2px dotted green;
+    bottom: 0;
+}
+
+#extra {
+    position: absolute;
+    width: 38vw;
+    height: 37vh;
+    border: 2px dotted cyan;
+    bottom: 0;
+    right: 0;
+}

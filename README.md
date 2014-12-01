@@ -1,0 +1,1 @@
+`jsx --watch /src /build` om het project te bouwen
