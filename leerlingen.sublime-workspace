@@ -1,0 +1,2005 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"box-",
+				"box-shadow"
+			],
+			[
+				"b-ra",
+				"border-radius"
+			],
+			[
+				"curr",
+				"currentBoard"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"highli",
+				"highlightSyntax"
+			],
+			[
+				"high",
+				"highlightBlock"
+			],
+			[
+				"synta",
+				"syntaxHighlight"
+			],
+			[
+				"inp",
+				"includePears"
+			],
+			[
+				"nese",
+				"nestedArguments"
+			],
+			[
+				"define",
+				"defineDataMethod"
+			],
+			[
+				"top",
+				"topTemplate"
+			],
+			[
+				"bottom",
+				"bottomTemplate"
+			],
+			[
+				"middl",
+				"middleTemplate"
+			],
+			[
+				"function",
+				"functionality"
+			],
+			[
+				"pak",
+				"packageName"
+			],
+			[
+				"Status",
+				"STATUSSES"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"ad",
+				"addFriendSearch"
+			],
+			[
+				"backgro",
+				"background-color"
+			],
+			[
+				"backc",
+				"background-color"
+			],
+			[
+				"even",
+				"eventPanel"
+			],
+			[
+				"getm",
+				"getMinutes()"
+			],
+			[
+				"newE",
+				"newEventForm"
+			],
+			[
+				"date",
+				"datepair"
+			],
+			[
+				"organ",
+				"organizerId"
+			],
+			[
+				"g",
+				"gaussian"
+			],
+			[
+				"sta",
+				"standard_deviation"
+			],
+			[
+				"temp",
+				"tempArray"
+			],
+			[
+				"tem",
+				"tempArray"
+			],
+			[
+				"idx",
+				"index"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"vers",
+				"versterker"
+			],
+			[
+				"Jumpt",
+				"JumpToBase"
+			],
+			[
+				"pop",
+				"populate_randomly"
+			],
+			[
+				"calc_",
+				"calc_fitness"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"new",
+				"newPhrase"
+			],
+			[
+				"fitne",
+				"fitness_percentage"
+			],
+			[
+				"fi",
+				"fitness_percentage"
+			],
+			[
+				"calc_f",
+				"calc_fitness_percentage"
+			],
+			[
+				"total",
+				"totalFitness"
+			],
+			[
+				"cal",
+				"calc_fitness_percentage"
+			],
+			[
+				"mutate",
+				"mutateChance"
+			],
+			[
+				"gene",
+				"generate_gene"
+			],
+			[
+				"gen",
+				"generate_gene"
+			],
+			[
+				"vertical",
+				"vertical-align"
+			],
+			[
+				"email",
+				"emailTemplates"
+			],
+			[
+				"changeP",
+				"changePasswordForm"
+			],
+			[
+				"change",
+				"changePassword"
+			],
+			[
+				"chan",
+				"changePassword"
+			],
+			[
+				"verify",
+				"verifyEmail"
+			],
+			[
+				"best",
+				"beststring"
+			],
+			[
+				"reset",
+				"resetPasswordForm"
+			],
+			[
+				"input",
+				"input	input - submit"
+			],
+			[
+				"sub",
+				"sub	Tag"
+			],
+			[
+				"u",
+				"users"
+			],
+			[
+				"l",
+				"logout"
+			],
+			[
+				"lendee",
+				"lendee_name"
+			],
+			[
+				"item",
+				"item_name"
+			],
+			[
+				"list",
+				"list_item"
+			],
+			[
+				"focu",
+				"focusText"
+			],
+			[
+				"ite",
+				"item_to_add"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"cat",
+				"categories"
+			],
+			[
+				"add",
+				"adding_category"
+			],
+			[
+				"addin",
+				"adding_category"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 505,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/page.js",
+			"settings":
+			{
+				"buffer_size": 4992,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mb/.config/sublime-text-3/Packages/User/snippets/console-log.sublime-snippet",
+			"settings":
+			{
+				"buffer_size": 143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 1607,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/AAAPackageDev/Support/Convert to ....sublime-build",
+	"command_palette":
+	{
+		"height": 370.0,
+		"selected_items":
+		[
+			[
+				"snicl",
+				"Snippet: console-log"
+			],
+			[
+				"sncl",
+				"Snippet: console-log"
+			],
+			[
+				"snippetcl",
+				"Snippet: console-log"
+			],
+			[
+				"node",
+				"SublimeREPL: Node"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"gita d",
+				"Git: Add..."
+			],
+			[
+				"gitcom",
+				"Git: Commit"
+			],
+			[
+				"gitcm",
+				"Set Syntax: Git Commit Message"
+			],
+			[
+				"git ad",
+				"Git: Add..."
+			],
+			[
+				"git stats",
+				"Git: Status"
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"gc",
+				"Git: Commit"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"gitstatus",
+				"Git: Status"
+			],
+			[
+				"stats",
+				"Git: Status"
+			],
+			[
+				"gitstat",
+				"Git: Status"
+			],
+			[
+				"gitad",
+				"Git: Add..."
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"python",
+				"SublimeREPL: Python"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"jas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"hl",
+				"BracketHighlighter: Jump to Left Bracket"
+			],
+			[
+				"replph",
+				"SublimeREPL: PHP"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"git comm	",
+				"Git: Commit"
+			],
+			[
+				"gita",
+				"Git: Add..."
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
+			[
+				"repp",
+				"SublimeREPL: Python"
+			],
+			[
+				"change",
+				"Git: Change Branch"
+			],
+			[
+				"chanb",
+				"Git: Change Branch"
+			],
+			[
+				"git branch",
+				"Git: Change Branch"
+			],
+			[
+				"git checkout",
+				"Git: Checkout Tag"
+			],
+			[
+				"git reset",
+				"Git: Reset (hard) HEAD"
+			],
+			[
+				"git comit",
+				"Git: Commit"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git commt",
+				"Git: Commit"
+			],
+			[
+				"git stt",
+				"Git: Status"
+			],
+			[
+				"refresh",
+				"Project: Refresh Folders"
+			],
+			[
+				"levels",
+				"Levels: Update"
+			],
+			[
+				"lisp",
+				"Package Control: List Packages"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			],
+			[
+				"gicomm",
+				"Git: Commit"
+			],
+			[
+				"scope",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"forj",
+				"Format: Javascript"
+			],
+			[
+				"git  status",
+				"Git: Status"
+			],
+			[
+				"wrapwith",
+				"Snippet: wrap-with-braces"
+			],
+			[
+				"wrapwithf",
+				"Snippet: wrap-with-function"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"emmet",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"compare",
+				"GitGutter: Compare Against Branch"
+			],
+			[
+				"diff",
+				"Git: Diff Staged Files (Ignore Whitespace)"
+			],
+			[
+				"branch",
+				"Git: Change Branch"
+			],
+			[
+				"git diff",
+				"Git: Diff All Files"
+			],
+			[
+				"shutis",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"shutn",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"shu",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"shunt",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"scoph",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packrev",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"scop",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"git cb",
+				"Git: Change Branch"
+			],
+			[
+				"git bran",
+				"Git: Change Branch"
+			],
+			[
+				"refhr",
+				"Project: Refresh Folders"
+			],
+			[
+				"edit",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"snippet",
+				"SnippetMaker: Make Snippet"
+			],
+			[
+				"edisn",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"snipp",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"snippetmaker",
+				"SnippetMaker: Make Snippet"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"wrap",
+				"Emmet: Wrap With Abbreviation"
+			],
+			[
+				"java",
+				"Format: Javascript"
+			],
+			[
+				"git graph",
+				"Git: Graph All"
+			],
+			[
+				"git",
+				"Git: Log All"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"save",
+				"Project: Save As"
+			],
+			[
+				"proje",
+				"Project: Refresh Folders"
+			],
+			[
+				"todo",
+				"TodoReview: Project Files"
+			],
+			[
+				"paclist",
+				"Package Control: List Packages"
+			],
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"git ocmm",
+				"Git: Commit"
+			],
+			[
+				"git staut",
+				"Git: Status"
+			],
+			[
+				"coff",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"packlist",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"gcomm",
+				"Git: Commit"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"comi",
+				"Git: Commit"
+			],
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
+				"gitadd",
+				"Git: Add..."
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"puy",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"keybin",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"move",
+				"MoveText: Move Right"
+			],
+			[
+				"default",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"line",
+				"Sort Lines"
+			],
+			[
+				"pref",
+				"Preferences: Settings - User"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"git ",
+				"Git: Graph All"
+			],
+			[
+				"git comi",
+				"Git: Commit"
+			],
+			[
+				"preferences",
+				"Preferences: Settings - User"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"emmet eva",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"handle",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			]
+		],
+		"width": 561.0
+	},
+	"console":
+	{
+		"height": 538.0,
+		"history":
+		[
+			"print(view.scope_name(view.sel().begin()))",
+			"print(view.scope_name(view.sel()))",
+			"print(view.scope_name(view.sel()[0].begin()))",
+			"sublime.CLASS_WORD_START",
+			"dir(sublime)",
+			"sublime.active_window().active_view().run_command(\"scope_font_lock\")",
+			"sublime.active_window().active_view()",
+			"sublime.active_window().active_view().run_command(\"scope_font_lock\")",
+			"sublime.active_window().active_view()",
+			"sublime.active_window()",
+			"sublime.active_view()",
+			"sublime.run_command(\"scope_font_lock\")",
+			"sublime.run_command(\"ScopeFontLock\")",
+			"sublime.run_command(\"lafjksd\")",
+			"sublime.run_command(\"scope_font_lock\")",
+			"dir(sublime)",
+			"sublime.command",
+			"sublime",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mb/Documents/web/schoolopdracht Jos leerlingen",
+		"/home/mb/Documents/web/schoolopdracht Jos leerlingen/build",
+		"/home/mb/Documents/web/schoolopdracht Jos leerlingen/src"
+	],
+	"file_history":
+	[
+		"/home/mb/Documents/web/schoolopdracht Jos leerlingen/build/bacon.js",
+		"/home/mb/Documents/web/schoolopdracht Jos leerlingen/build/rx.lite.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/board/manageBoards.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/editor/editor.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/README.md",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/navigation/boardNavigation.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/styles/notes.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/styles/note.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/routes.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/styles/variables.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/styles/style.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/styles/autoform.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/tags/tag.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/note/note.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/navigation/boardNavigation.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/navigation/boardNavigation.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/brainstorm.sublime-workspace",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/lib/collections.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/mup.json",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/notes/notes.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/note/note.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/previewNote/previewNote.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/board/board.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/globalHelpers.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/notes/notes.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/previewNote/previewNote.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/board/board.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/client.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/shareNote/shareNote.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/shareNote/shareNote.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/server/startup.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/board/manageBoards.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/.meteor/versions",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/container.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/.meteor/packages",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/empty.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/.gitignore",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/brainstorm.sublime-project",
+		"/home/mb/Downloads/Wizards&Warriors-TitleTheme.mid",
+		"/home/mb/Documents/web/meteor/meteor-applications/blagh/.meteor/packages",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/board/boardNavigation.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/board/boardNavigation.js",
+		"/home/mb/.mozilla/firefox/qbo22y7s.default/scriptish_scripts/postchain/postchain.user.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/server/allowdeny.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/board/boardNavigation.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/home.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/editor/editor.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/styles/animation.css",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/server/pubsub.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/tags/tag.html",
+		"/home/mb/.config/sublime-text-3/Packages/User/Markdown.sublime-settings",
+		"/home/mb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/mb/.config/sublime-text-3/Packages/User/macros/insert-semicolon.sublime-macro",
+		"/home/mb/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/mb/.config/sublime-text-3/Packages/User/snippets/ifn.sublime-snippet",
+		"/home/mb/.config/sublime-text-3/Packages/User/snippets/fn.sublime-snippet",
+		"/home/mb/.config/sublime-text-3/Packages/User/snippets/objectfunction.sublime-snippet",
+		"/home/mb/Documents/web/meteor/meteor-packages/meteor-marked/README.md",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/packages/marked/package.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/packages/marked/template-integration.js",
+		"/home/mb/.config/sublime-text-3/Packages/User/snippets/that.sublime-snippet",
+		"/home/mb/Documents/web/meteor/meteor-packages/meteor-marked/package.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/lib/vendor/highlightjs/highlight.pack.js",
+		"/home/mb/Documents/web/meteor/meteor-packages/meteor-marked/template-integration.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/packages/meteor-marked/README.md",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/packages/meteor-marked/package.json",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/packages/marked/versions.json",
+		"/home/mb/Documents/web/meteor/meteor-packages/meteor-marked/highlightjs/highlight.pack.js",
+		"/home/mb/.config/sublime-text-3/Packages/User/ifn.sublime-snippet",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/newNote/editor.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/newNote/editor.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/styles/noteContainer.less",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/.meteor/local/build/programs/server/packages/iron_router.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/newNote/newNote.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm-clone/client/note/note.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/startup.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/newNote/newNote.html",
+		"/home/mb/Documents/web/meteor/meteor-packages/meteor-marked/versions.json",
+		"/home/mb/Documents/web/meteor/meteor-packages/meteor-marked/.gitmodules",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/plannificater.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/tag.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/routes.js",
+		"/home/mb/.config/sublime-text-3/Packages/User/font-lock/font-lock.sublime-settings",
+		"/home/mb/.config/sublime-text-3/Packages/User/font-lock/javascriptFontlock.tmLanguage",
+		"/home/mb/.config/sublime-text-3/Packages/User/font-lock.py",
+		"/home/mb/.config/sublime-text-3/Packages/User/font-lock/font-lock.py",
+		"/home/mb/.config/sublime-text-3/Packages/User/font-lock/Default.sublime-commands",
+		"/home/mb/.config/sublime-text-3/Packages/User/font-lock/fontLock.tmLanguage",
+		"/home/mb/.config/sublime-text-3/Packages/User/font-lock/javascript-fontlock.tmLanguage",
+		"/home/mb/.config/sublime-text-3/Packages/JavaScript/JavaScript.tmLanguage",
+		"/opt/sublime_text/Packages/JavaScript.sublime-package",
+		"/home/mb/.config/sublime-text-3/Packages/User/Base File.sublime-settings",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/dataMethods.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/note/note.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/newNote/newNote.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/lib/widgetManager.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/container/container.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/baseWidget/baseWidget.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/baseWidget/baseWidget.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/note/note-bottom.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/util.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/note/note-top.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/lib/nestedArguments.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/newNote/newNote-middle.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/container/container.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/note/note-middle.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/lib/collections/Tags.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/lib/collections/Display.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/lib/collections/Notes.js",
+		"/home/mb/Documents/web/meteor/meteor-packages/nestedTemplateHelpers/package.js",
+		"/home/mb/Documents/web/meteor/meteor-packages/friends/package.js",
+		"/home/mb/.config/sublime-text-3/Packages/User/fn.sublime-snippet",
+		"/home/mb/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/views/widgets/widgetManager.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/widgetManager.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/newNote/newNote.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/note/note.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/note/note-top.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/note/note-bottom.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/note/note-middle.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/baseWidget/baseWidget.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/newNote/newNote-middle.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/lib/collections/display.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/widgets/baseWdiget/baseWidget.html",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/lib/highlightjs/highlight.pack.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/lib/highlightjs/monokai_sublime.min.css",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/lib/highlightjs/hljs.js",
+		"/home/mb/Documents/web/meteor/meteor-applications/brainstorm/client/vendor/highlightjs/hljs.js"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"*.js",
+			"",
+			"newNote.html",
+			"",
+			"*/views/*",
+			"/views/*",
+			"/views",
+			"",
+			"*.less",
+			".less",
+			"*",
+			"js/*",
+			"*",
+			"LendLib.js",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"leerling",
+			"leerlingen",
+			"v",
+			"log",
+			"this",
+			"text",
+			"leerlingen",
+			"nieuwLeerlingForm",
+			"niew",
+			"NiewLeerlingForm",
+			"quippet",
+			"220",
+			",",
+			".preview",
+			"_.",
+			"233",
+			"208",
+			"40px",
+			"40",
+			"ul",
+			"bottomNote",
+			"16px",
+			"16",
+			"4",
+			"hidden",
+			"+",
+			"path",
+			"board",
+			"Session.set",
+			"board_id",
+			"input",
+			"startup",
+			"getCurrentBoardname",
+			"boardId",
+			"if",
+			"if (",
+			"getPage",
+			"_.",
+			"startup",
+			"head",
+			"will not be removed",
+			"setCurrentBoardName",
+			"getCurrentBoardId",
+			"getBoardId",
+			"]]",
+			"data",
+			"d",
+			", ",
+			">>>",
+			"\n",
+			",",
+			"amountOfPeople",
+			"hl",
+			"hljs",
+			"url",
+			"boardNav",
+			"boardN",
+			"boardNavigation",
+			"getCurrentBoardname",
+			"selected-",
+			"b",
+			"a",
+			"resto\": 45081586",
+			"resto\": 0",
+			"\n            ",
+			"));",
+			"'",
+			"this.name",
+			"white",
+			"p",
+			"fieldset",
+			"pre",
+			"console.log",
+			"180",
+			"70",
+			"180",
+			"currentBoard",
+			"CurrentBoard",
+			"currentBoard",
+			"name",
+			"is:",
+			"is",
+			"white",
+			"name",
+			"board",
+			"o",
+			"boardId",
+			"h2",
+			"p",
+			"quickForm",
+			"white",
+			"getCu",
+			"board",
+			"getboard",
+			"div",
+			"submit",
+			"notes =",
+			"notes:",
+			"getCurrentBoard",
+			"boards",
+			"container",
+			"body",
+			"Notes",
+			"Notes =",
+			"var Notes",
+			"Notes",
+			"Notes =",
+			"30",
+			"new",
+			"schema",
+			"SimpleSchema",
+			" =",
+			"=",
+			"#",
+			"if",
+			"currentState",
+			"break",
+			",",
+			"checkValue",
+			"');",
+			"checkValue",
+			"codes",
+			"syntaxHighlight",
+			"python",
+			"rerenderHLJS",
+			"updatingNote",
+			"for",
+			"that"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"  ",
+			"\\t",
+			"eventOrganizerPanel",
+			"formatDate",
+			"jump_to_interactive",
+			"},\n",
+			"regex_contains",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								489,
+								489
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Flatland Dark (SL).tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/page.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3028,
+								3028
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Flatland Dark (SL).tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1242.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/mb/.config/sublime-text-3/Packages/User/snippets/console-log.sublime-snippet",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								54,
+								54
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Flatland Dark (SL).tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1170,
+								1170
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Flatland Dark (SL).tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1220.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 122.0
+	},
+	"output.package_dev":
+	{
+		"height": 122.0
+	},
+	"output.scope_viewer":
+	{
+		"height": 122.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"project": "leerlingen.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"readm",
+				"README.md"
+			],
+			[
+				"less",
+				"client/navigation/boardNavigation.less"
+			],
+			[
+				".less",
+				"client/styles/notes.less"
+			],
+			[
+				"tag.js",
+				"client/tags/tag.js"
+			],
+			[
+				"note.h",
+				"client/note/note.html"
+			],
+			[
+				"editor",
+				"client/editor/editor.js"
+			],
+			[
+				"conta",
+				"client/views/container.html"
+			],
+			[
+				"notes.js",
+				"client/notes/notes.js"
+			],
+			[
+				"allow",
+				"server/allowdeny.js"
+			],
+			[
+				"colle",
+				"lib/collections.js"
+			],
+			[
+				"autof",
+				"client/styles/autoform.less"
+			],
+			[
+				"shar",
+				"client/shareNote/shareNote.html"
+			],
+			[
+				"boarj",
+				"client/board/board.js"
+			],
+			[
+				"editorjs",
+				"client/editor/editor.js"
+			],
+			[
+				"note.html",
+				"client/note/note.html"
+			],
+			[
+				"routes",
+				"client/routes.js"
+			],
+			[
+				"noless",
+				"client/styles/note.less"
+			],
+			[
+				"notes.h",
+				"client/notes/notes.html"
+			],
+			[
+				"rouje",
+				"client/routes.js"
+			],
+			[
+				"notesjs",
+				"client/notes/notes.js"
+			],
+			[
+				"nojs",
+				"client/note/note.js"
+			],
+			[
+				"prjs",
+				"client/previewNote/previewNote.js"
+			],
+			[
+				"previ",
+				"client/previewNote/previewNote.html"
+			],
+			[
+				"editjs",
+				"client/editor/editor.js"
+			],
+			[
+				"tagjs",
+				"client/tags/tag.js"
+			],
+			[
+				"prevjs",
+				"brainstorm/client/previewNote/previewNote.js"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"contain",
+				"client/views/container.html"
+			],
+			[
+				"clientjs",
+				"client/client.js"
+			],
+			[
+				"wim",
+				"client/views/widgets/lib/widgetManager.js"
+			],
+			[
+				"wid",
+				"client/views/widgets/lib/widgetManager.js"
+			],
+			[
+				"container",
+				"client/views/container/container.html"
+			],
+			[
+				"conjs",
+				"client/views/container/container.js"
+			],
+			[
+				"disp",
+				"lib/collections/Display.js"
+			],
+			[
+				"wijs",
+				"client/views/widgets/lib/widgetManager.js"
+			],
+			[
+				"users",
+				"lib/Users.js"
+			],
+			[
+				"glo",
+				"client/globalHelpers.js"
+			],
+			[
+				"friehtml",
+				"client/views/friends.html"
+			],
+			[
+				"vari",
+				"client/styles/variables.less"
+			],
+			[
+				"friles",
+				"client/styles/friend.less"
+			],
+			[
+				"styles",
+				"client/styles/style.less"
+			],
+			[
+				"frienhm",
+				"client/views/components/friend.html"
+			],
+			[
+				"fril",
+				"client/styles/friend.less"
+			],
+			[
+				"secuir",
+				"server/security.js"
+			],
+			[
+				"publi",
+				"server/publications.js"
+			],
+			[
+				"frhm",
+				"client/views/friends.html"
+			],
+			[
+				".sublime",
+				"client/views/photoevetns.sublime-project"
+			],
+			[
+				"frien.js",
+				"client/controllers/friends.js"
+			],
+			[
+				"varia",
+				"client/styles/variables.less"
+			],
+			[
+				"firhl",
+				"client/views/friends.html"
+			],
+			[
+				"fhtml",
+				"client/views/friends.html"
+			],
+			[
+				"globa",
+				"client/globalHelpers.js"
+			],
+			[
+				"evts",
+				"client/views/evts.html"
+			],
+			[
+				"eventor",
+				"client/views/components/event-organizer.html"
+			],
+			[
+				"lar",
+				"/media/mb/F266-5162/lars.html"
+			],
+			[
+				"sideh",
+				"client/views/sidebarLeft.html"
+			],
+			[
+				"project",
+				"client/views/photoevetns.sublime-project"
+			],
+			[
+				"vless",
+				"client/styles/variables.less"
+			],
+			[
+				"style.css",
+				"client/styles/theme.css"
+			],
+			[
+				"route",
+				"client/routes.js"
+			],
+			[
+				".css",
+				"client/styles/theme.css"
+			],
+			[
+				"coll",
+				"lib/collections.js"
+			],
+			[
+				"helpers",
+				"client/globalHelpers.js"
+			],
+			[
+				"helprs",
+				"client/globalHelpers.js"
+			],
+			[
+				"hom",
+				"client/views/home.html"
+			],
+			[
+				"css",
+				"client/styles/theme.css"
+			],
+			[
+				"head",
+				"client/views/common/header.html"
+			],
+			[
+				"impo",
+				"import sublime"
+			],
+			[
+				"client",
+				"client/client.js"
+			],
+			[
+				"set",
+				"client/views/settings.html"
+			],
+			[
+				"login",
+				"client/views/login.html"
+			],
+			[
+				"serv",
+				"server/server.js"
+			],
+			[
+				"rout",
+				"client/routes.js"
+			],
+			[
+				"verif",
+				"server/server-templates/verifyEmail.handlebars"
+			],
+			[
+				"clijs",
+				"client/client.js"
+			],
+			[
+				"register",
+				"client/views/register.html"
+			],
+			[
+				"se",
+				"server/server.js"
+			],
+			[
+				"rese",
+				"client/views/resetPassword.html"
+			],
+			[
+				"resp",
+				"client/views/resetPassword.html"
+			],
+			[
+				"regi",
+				"client/views/register.html"
+			],
+			[
+				"home",
+				"client/views/home.html"
+			],
+			[
+				".html",
+				".meteor/local/build/programs/client/head.html"
+			],
+			[
+				"len",
+				"LendLib.html"
+			],
+			[
+				"lh",
+				".meteor/local/build/programs/ctl/node_modules/http-proxy/test/lib-http-proxy-test.js"
+			],
+			[
+				"todhml",
+				"client/todos.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"marti",
+				"~/Documents/web/javascript/nature of code/lib/martijnbrekelmans.sublime-project"
+			],
+			[
+				"leerlin",
+				"~/Documents/web/schoolopdracht Jos leerlingen/leerlingen.sublime-workspace"
+			],
+			[
+				"",
+				"~/Documents/web/schoolopdracht Jos leerlingen/leerlingen.sublime-workspace"
+			],
+			[
+				"natur",
+				"~/Documents/web/javascript/nature of code/lib/martijnbrekelmans.sublime-project"
+			],
+			[
+				"martij",
+				"~/Documents/web/javascript/nature of code/lib/martijnbrekelmans.sublime-project"
+			],
+			[
+				"martijn",
+				"~/Documents/web/javascript/nature of code/lib/martijnbrekelmans.sublime-project"
+			],
+			[
+				"brainstorm",
+				"~/Documents/web/meteor/meteor-applications/brainstorm/brainstorm.sublime-project"
+			],
+			[
+				"c",
+				"~/Documents/C-programmeren/C-programmeren.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 208.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

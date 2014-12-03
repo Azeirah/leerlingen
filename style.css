@@ -67,6 +67,10 @@
     font-size: .9em;
 }
 
+.nummer {
+    color: red;
+}
+
 #leerlingen {
     position: absolute;
     width: 80vw;
