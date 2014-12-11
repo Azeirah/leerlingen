@@ -96,8 +96,254 @@ var leerlingen = observable([
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand@student.avans.nl"
-    }
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Wel",
+        "achternaam": "iemand",
+        "mentor": "Judith",
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Wel",
+        "achternaam": "iemand",
+        "mentor": "Judith",
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Wel",
+        "achternaam": "iemand",
+        "mentor": "Judith",
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Wel",
+        "achternaam": "iemand",
+        "mentor": "Judith",
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Wel",
+        "achternaam": "iemand",
+        "mentor": "Judith",
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
+    {
+        "voornaam": "Helemaal",
+        "achternaam": "Niemand",
+        "mentor": "Thijs",
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+    },
 ]);
 
 var leraren = [
@@ -138,11 +384,10 @@ var Statistiek = React.createClass({displayName: 'Statistiek',
             this.setState({leerlingen: lln});
         }.bind(this);
     },
-    render: function () {
-        var docenten = this.state.leerlingen.map(function (leerling) {
-            return leerling.mentor;
-        });
-        var aantalLeerlingen = this.state.leerlingen.length;
+    aantalLeerlingen: function () {
+        return this.state.leerlingen.length;
+    },
+    leerlingenPerDocent: function () {
         var leerlingenPerDocent = this.state.leerlingen.reduce(function (prev, current) {
             if (prev.hasOwnProperty(current.mentor)) {
                 prev[current.mentor] += 1;
@@ -151,11 +396,16 @@ var Statistiek = React.createClass({displayName: 'Statistiek',
             }
             return prev;
         }, {});
+        return leerlingenPerDocent;
+    },
+    docentenStatistiek: function () {
+        var leerlingenPerDocent = this.leerlingenPerDocent();
         var docentenStatistiek = (function () {
             var statistieken = [];
-            Object.keys(leerlingenPerDocent).forEach(function (leraar, index) {
+            var keys = Object.keys(leerlingenPerDocent);
+            keys.forEach(function (leraar, index) {
                 var aantalLeerlingen = leerlingenPerDocent[leraar];
-                if (index !== Object.keys(leerlingenPerDocent).length - 1) {
+                if (index !== keys.length - 1) {
                     statistieken.push(
                         React.createElement("span", null, React.createElement("span", {className: "nummer"}, aantalLeerlingen), " bij ", leraar, ", ")
                     );
@@ -167,8 +417,17 @@ var Statistiek = React.createClass({displayName: 'Statistiek',
             });
             return statistieken;
         }());
-        var plural         = leerlingenPerDocent[Object.keys(leerlingenPerDocent)[0]] === 1 ? "hoort" : "horen";
-        var aantalDocenten = countWithProperty(this.state.leerlingen, "leraar", "Jos");
+        return docentenStatistiek;
+    },
+    render: function () {
+        var docenten = this.state.leerlingen.map(function (leerling) {
+            return leerling.mentor;
+        });
+        var aantalLeerlingen    = this.state.leerlingen.length;
+        var leerlingenPerDocent = this.leerlingenPerDocent();
+        var docentenStatistiek  = this.docentenStatistiek();
+        var plural              = leerlingenPerDocent[Object.keys(leerlingenPerDocent)[0]] === 1 ? "hoort" : "horen";
+        var aantalDocenten      = countWithProperty(this.state.leerlingen, "leraar", "Jos");
         return (
             React.createElement("p", null, "In totaal zijn er ", React.createElement("span", {className: "nummer"}, aantalLeerlingen), " leerlingen. Van deze leerlingen ", plural, " er ", docentenStatistiek)
         );
