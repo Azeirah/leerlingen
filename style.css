@@ -7,6 +7,10 @@
     width: 80vw;
     height: 60vh;
     overflow-y: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .LeerlingenContainer .Leerling:before,
@@ -20,6 +24,7 @@
 }
 
 .Leerling {
+    overflow: hidden;
     margin: 5px;
     display: inline-block;
     /**
@@ -30,6 +35,11 @@
     word-wrap: break-word;
     width: calc((100% / 4) - (2 * 5px));
     height: 100px;
+}
+
+.Leerling .info-leerling {
+    display: inline-block;
+    width: calc(100% - 60px - (2 * 5px));
 }
 
 .foto-leerling {
@@ -50,6 +60,7 @@
 
 .email {
     color: rgb(150, 150, 150);
+    font-size: 0.8em;
 }
 
 .foto-leraar {
@@ -69,6 +80,10 @@
 
 .nummer {
     color: red;
+}
+
+.selected {
+    background-color: rgba(30, 170, 30, 0.5);
 }
 
 #leerlingen {
