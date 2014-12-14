@@ -3,12 +3,12 @@ function observable (data) {
   observable.subscribers = [];
   observable.data = data;
 
-  var filters = {};
+  observable.filters = {};
 
   function notify () {
     var data = observable.data;
-    Object.keys(filters).forEach(function (key) {
-        data = filters[key](data);
+    Object.keys(observable.filters).forEach(function (key) {
+        data = observable.filters[key](data);
     });
     observable.subscribers.forEach(function (subscriber) {
       subscriber.notify(data);
@@ -29,11 +29,11 @@ function observable (data) {
   };
 
   observable.registerFilter = function (name, filter) {
-    filters[name] = filter;
+    observable.filters[name] = filter;
   };
 
   observable.unregisterFilter = function (name) {
-    delete filters[name];
+    delete observable.filters[name];
   };
 
   observable.poke = function () {
@@ -59,26 +59,33 @@ var leerlingen = observable([
     {
         "voornaam": "Martijn",
         "achternaam": "Brekelmans",
-        "leerlingNummer": 2072491,
+        "leerlingNummer": 2899328,
         "email-avans": "tijntje_7@msn.com",
-        "mentor": "Jos"
+        "mentor": "Jos",
+        "groep": "F",
+        "opmerking": "Maakt deze website"
     },
     {
         "voornaam": "Chris",
         "achternaam": "Ermans",
-        "leerlingNummer": 20122014,
+        "leerlingNummer": 2154234,
         "email-avans": "brian.dams@student.avans.nl",
-        "mentor": "Peter"
+        "mentor": "Peter",
+        "groep": "A",
+        "opmerking": ""
     },
     {
         "voornaam": "Baal",
         "achternaam": "Bobsen",
-        "leerlingNummer": 2023030404,
+        "leerlingNummer": 3266980,
         "email-avans": "baal@prinny.com",
-        "mentor": "Peter"
+        "mentor": "Peter",
+        "groep": "C",
+        "opmerking": ""
     },
     {
         "voornaam": "Luc",
+        "leerlingNummer": 3700707,
         "achternaam": "Ackerveken",
         "tussenvoegsel": "van den",
         "voorletters": "L.",
@@ -90,260 +97,388 @@ var leerlingen = observable([
         "vooropleiding": "havo",
         "profiel": "NT",
         "email-avans": "l.vandenackerveken@student.avans.nl",
-        "email-eigen": "luc@ackerveken.nl"
+        "email-eigen": "luc@ackerveken.nl",
+        "groep": "D",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3147562,
+        "groep": "D",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2143960,
+        "groep": "B",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2760250,
+        "groep": "C",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3925143,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Wel",
         "achternaam": "iemand",
         "mentor": "Judith",
-        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3815983,
+        "groep": "D",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3465620,
+        "groep": "G",
+        "opmerking": ""
     },
     {
         "voornaam": "Wel",
         "achternaam": "iemand",
         "mentor": "Judith",
-        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2364004,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3891014,
+        "groep": "C",
+        "opmerking": ""
     },
     {
         "voornaam": "Wel",
         "achternaam": "iemand",
         "mentor": "Judith",
-        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3791246,
+        "groep": "C",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3293567,
+        "groep": "D",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3118936,
+        "groep": "B",
+        "opmerking": ""
     },
     {
         "voornaam": "Wel",
         "achternaam": "iemand",
         "mentor": "Judith",
-        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3242225,
+        "groep": "F",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2169471,
+        "groep": "C",
+        "opmerking": ""
     },
     {
         "voornaam": "Wel",
         "achternaam": "iemand",
         "mentor": "Judith",
-        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2784836,
+        "groep": "A",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2900427,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3013939,
+        "groep": "F",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3410772,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3279429,
+        "groep": "B",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2537866,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3001661,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2334397,
+        "groep": "F",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3722498,
+        "groep": "A",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2325398,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2265600,
+        "groep": "D",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2611276,
+        "groep": "F",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2678630,
+        "groep": "B",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2449044,
+        "groep": "A",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2797701,
+        "groep": "F",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3787732,
+        "groep": "A",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3888466,
+        "groep": "G",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3763381,
+        "groep": "B",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2740095,
+        "groep": "C",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2813547,
+        "groep": "D",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3960506,
+        "groep": "A",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2821639,
+        "groep": "A",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2967506,
+        "groep": "F",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2549568,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2496004,
+        "groep": "F",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3096291,
+        "groep": "B",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3332527,
+        "groep": "G",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 3794440,
+        "groep": "E",
+        "opmerking": ""
     },
     {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
-        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn"
-    },
+        "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+        "leerlingNummer": 2712445,
+        "groep": "G",
+        "opmerking": ""
+    }
 ]);
 
 var leraren = [
@@ -352,6 +487,16 @@ var leraren = [
     {"naam": "Thijs"},
     {"naam": "Tonny"},
     {"naam": "Judith"}
+];
+
+var groepen = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
 ];
 
 function vormNaam (leerling) {
@@ -434,6 +579,57 @@ var Statistiek = React.createClass({displayName: 'Statistiek',
     }
 });
 
+var Groep = React.createClass({displayName: 'Groep',
+    render: function () {
+        var classString = "groep";
+        classString += this.props.selected ? " selected" : "";
+        return (
+            React.createElement("div", {className: classString, onClick: this.props.onClick.bind(this, this)}, this.props.groep)
+        );
+    }
+});
+
+var GroepenContainer = React.createClass({displayName: 'GroepenContainer',
+    handleClick: function (groep) {
+        var groepNaam;
+
+        this.props.leerlingen.unregisterFilter(this.state.filter);
+        this.setState({filter: groep.props.groep});
+
+        groepNaam = groep.props.groep;
+
+        console.log(this.state.filter);
+
+        if (groepNaam) {
+            if (groepNaam !== this.state.filter) {
+                this.props.leerlingen.registerFilter(groepNaam, function (leerlingen) {
+                    return leerlingen.filter(isPropertyEqual("groep", groepNaam));
+                });
+            } else {
+                this.setState({filter: undefined});
+            }
+        }
+
+        this.props.leerlingen.poke();
+    },
+    getInitialState: function () {
+        return {filter: ""};
+    },
+    render: function () {
+        var groepenLijst = this.props.groepen.map(function (groep) {
+            var selected = this.state.filter === groep;
+            return (
+                React.createElement(Groep, {groep: groep, selected: selected, onClick: this.handleClick})
+            );
+        }, this);
+        return (
+            React.createElement("div", {className: "LerarenContainer"}, 
+                groepenLijst
+            )
+        );
+    }
+});
+
 var Leraar = React.createClass({displayName: 'Leraar',
     render: function () {
         var classString = "foto-leraar";
@@ -496,7 +692,7 @@ var LeerlingenContainer = React.createClass({displayName: 'LeerlingenContainer',
     render: function () {
         var leerlingenLijst = this.state.leerlingen.map(function (leerling) {
             return (
-                React.createElement(Leerling, {naam: vormNaam(leerling), email: leerling["email-avans"], leerlingNummer: leerling.leerlingNummer})
+                React.createElement(Leerling, {leerling: leerling})
             );
         });
         return (
@@ -520,12 +716,16 @@ var Leerling = React.createClass({displayName: 'Leerling',
     render: function () {
         var classString = "Leerling";
         classString += this.state.selected ? " selected" : "";
+        var leerling = this.props.leerling;
+        var naam = vormNaam(leerling);
         return (
             React.createElement("div", {className: classString, onMouseEnter: this.handleClick, onMouseDown: this.handleClick}, 
                 React.createElement("div", {className: "foto-leerling"}), 
                 React.createElement("div", {className: "info-leerling"}, 
-                    React.createElement("h4", {className: "naam-leerling"}, this.props.naam), 
-                    React.createElement("p", {className: "email"}, this.props.email)
+                    React.createElement("h4", {className: "naam-leerling"}, naam), 
+                    React.createElement("p", {className: "leerlingNummer"}, leerling.leerlingNummer), 
+                    React.createElement("p", {className: "email"}, leerling["email-avans"]), 
+                    React.createElement("p", {className: "opmerking"}, leerling.opmerking)
                 )
             )
         );
@@ -573,7 +773,7 @@ React.render(
 );
 
 React.render(
-    React.createElement(LerarenContainer, {leraren: leraren, leerlingen: leerlingen}),
+    React.createElement(GroepenContainer, {groepen: groepen, leerlingen: leerlingen}),
     document.getElementById("leraren")
 );
 
