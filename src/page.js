@@ -518,6 +518,10 @@ function isPropertyEqual (property, value) {
     };
 }
 
+function generateGUID () {
+    return Math.random() * Math.pow(2, 64);
+}
+
 var Statistiek = React.createClass({
     getInitialState: function () {
         return {leerlingen: []};
@@ -598,8 +602,6 @@ var GroepenContainer = React.createClass({
 
         groepNaam = groep.props.groep;
 
-        console.log(this.state.filter);
-
         if (groepNaam) {
             if (groepNaam !== this.state.filter) {
                 this.props.leerlingen.registerFilter(groepNaam, function (leerlingen) {
@@ -623,7 +625,8 @@ var GroepenContainer = React.createClass({
             );
         }, this);
         return (
-            <div className="LerarenContainer">
+            <div className="GroepenContainer">
+                <h2>Groepen</h2>
                 {groepenLijst}
             </div>
         );
@@ -678,6 +681,29 @@ var LerarenContainer = React.createClass({
     }
 });
 
+var selectionBrush = (function () {
+    var brush = Object.create(null);
+    brush.mode = "select";
+
+    brush.startSelection = function (isInitialSelected, component) {
+        brush.mode = isInitialSelected ? "deselect" : "select";
+    };
+
+    brush.paintSelection = function (component) {
+        return brush.mode === "select";
+    };
+
+    // brush.select = function (component) {
+    //     brush.selected.push(component);
+    // };
+
+    // brush.deselect = function (component) {
+    //     delete brush[brush.indexOf(component)];
+    // };
+
+    return brush;
+}());
+
 var LeerlingenContainer = React.createClass({
     getInitialState: function () {
         return {leerlingen: []};
@@ -692,9 +718,9 @@ var LeerlingenContainer = React.createClass({
     render: function () {
         var leerlingenLijst = this.state.leerlingen.map(function (leerling) {
             return (
-                <Leerling leerling={leerling}></Leerling>
+                <Leerling leerling={leerling} key={generateGUID()} selectionBrush={this.props.selectionBrush}></Leerling>
             );
-        });
+        }.bind(this));
         return (
             <div className="LeerlingenContainer">
                 {leerlingenLijst}
@@ -705,8 +731,16 @@ var LeerlingenContainer = React.createClass({
 });
 
 var Leerling = React.createClass({
-    handleClick: function (event) {
+    paintSelection: function (event) {
         if (event.buttons === 1) {
+            console.log("Selecting!");
+            this.setState({selected: this.props.selectionBrush.paintSelection(this)});
+        }
+    },
+    startSelection: function (event) {
+        if (event.buttons === 1) {
+            console.log("Selecting!");
+            this.props.selectionBrush.startSelection(this.state.selected, this);
             this.setState({selected: !this.state.selected});
         }
     },
@@ -719,7 +753,7 @@ var Leerling = React.createClass({
         var leerling = this.props.leerling;
         var naam = vormNaam(leerling);
         return (
-            <div className={classString} onMouseEnter={this.handleClick} onMouseDown={this.handleClick}>
+            <div className={classString} onMouseEnter={this.paintSelection} onMouseDown={this.startSelection}>
                 <div className="foto-leerling"></div>
                 <div className="info-leerling">
                     <h4 className="naam-leerling">{naam}</h4>
@@ -768,7 +802,7 @@ var GroepEditor = React.createClass({
 });
 
 React.render(
-    <LeerlingenContainer leerlingen={leerlingen}/>,
+    <LeerlingenContainer leerlingen={leerlingen} selectionBrush={selectionBrush}/>,
     document.getElementById("leerlingen")
 );
 

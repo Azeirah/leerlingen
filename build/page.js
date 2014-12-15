@@ -518,6 +518,10 @@ function isPropertyEqual (property, value) {
     };
 }
 
+function generateGUID () {
+    return Math.random() * Math.pow(2, 64);
+}
+
 var Statistiek = React.createClass({displayName: 'Statistiek',
     getInitialState: function () {
         return {leerlingen: []};
@@ -598,8 +602,6 @@ var GroepenContainer = React.createClass({displayName: 'GroepenContainer',
 
         groepNaam = groep.props.groep;
 
-        console.log(this.state.filter);
-
         if (groepNaam) {
             if (groepNaam !== this.state.filter) {
                 this.props.leerlingen.registerFilter(groepNaam, function (leerlingen) {
@@ -623,7 +625,8 @@ var GroepenContainer = React.createClass({displayName: 'GroepenContainer',
             );
         }, this);
         return (
-            React.createElement("div", {className: "LerarenContainer"}, 
+            React.createElement("div", {className: "GroepenContainer"}, 
+                React.createElement("h2", null, "Groepen"), 
                 groepenLijst
             )
         );
@@ -678,6 +681,29 @@ var LerarenContainer = React.createClass({displayName: 'LerarenContainer',
     }
 });
 
+var selectionBrush = (function () {
+    var brush = Object.create(null);
+    brush.mode = "select";
+
+    brush.startSelection = function (isInitialSelected, component) {
+        brush.mode = isInitialSelected ? "deselect" : "select";
+    };
+
+    brush.paintSelection = function (component) {
+        return brush.mode === "select";
+    };
+
+    // brush.select = function (component) {
+    //     brush.selected.push(component);
+    // };
+
+    // brush.deselect = function (component) {
+    //     delete brush[brush.indexOf(component)];
+    // };
+
+    return brush;
+}());
+
 var LeerlingenContainer = React.createClass({displayName: 'LeerlingenContainer',
     getInitialState: function () {
         return {leerlingen: []};
@@ -692,9 +718,9 @@ var LeerlingenContainer = React.createClass({displayName: 'LeerlingenContainer',
     render: function () {
         var leerlingenLijst = this.state.leerlingen.map(function (leerling) {
             return (
-                React.createElement(Leerling, {leerling: leerling})
+                React.createElement(Leerling, {leerling: leerling, key: generateGUID(), selectionBrush: this.props.selectionBrush})
             );
-        });
+        }.bind(this));
         return (
             React.createElement("div", {className: "LeerlingenContainer"}, 
                 leerlingenLijst, 
@@ -705,8 +731,16 @@ var LeerlingenContainer = React.createClass({displayName: 'LeerlingenContainer',
 });
 
 var Leerling = React.createClass({displayName: 'Leerling',
-    handleClick: function (event) {
+    paintSelection: function (event) {
         if (event.buttons === 1) {
+            console.log("Selecting!");
+            this.setState({selected: this.props.selectionBrush.paintSelection(this)});
+        }
+    },
+    startSelection: function (event) {
+        if (event.buttons === 1) {
+            console.log("Selecting!");
+            this.props.selectionBrush.startSelection(this.state.selected, this);
             this.setState({selected: !this.state.selected});
         }
     },
@@ -719,7 +753,7 @@ var Leerling = React.createClass({displayName: 'Leerling',
         var leerling = this.props.leerling;
         var naam = vormNaam(leerling);
         return (
-            React.createElement("div", {className: classString, onMouseEnter: this.handleClick, onMouseDown: this.handleClick}, 
+            React.createElement("div", {className: classString, onMouseEnter: this.paintSelection, onMouseDown: this.startSelection}, 
                 React.createElement("div", {className: "foto-leerling"}), 
                 React.createElement("div", {className: "info-leerling"}, 
                     React.createElement("h4", {className: "naam-leerling"}, naam), 
@@ -768,7 +802,7 @@ var GroepEditor = React.createClass({displayName: 'GroepEditor',
 });
 
 React.render(
-    React.createElement(LeerlingenContainer, {leerlingen: leerlingen}),
+    React.createElement(LeerlingenContainer, {leerlingen: leerlingen, selectionBrush: selectionBrush}),
     document.getElementById("leerlingen")
 );
 
