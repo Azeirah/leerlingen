@@ -54,6 +54,20 @@ function subscriber () {
   return subscriber;
 }
 
+/***
+ *           /$$             /$$
+ *          | $$            | $$
+ *      /$$$$$$$  /$$$$$$  /$$$$$$    /$$$$$$
+ *     /$$__  $$ |____  $$|_  $$_/   |____  $$
+ *    | $$  | $$  /$$$$$$$  | $$      /$$$$$$$
+ *    | $$  | $$ /$$__  $$  | $$ /$$ /$$__  $$
+ *    |  $$$$$$$|  $$$$$$$  |  $$$$/|  $$$$$$$
+ *     \_______/ \_______/   \___/   \_______/
+ *
+ *
+ *
+ */
+
 // {"naam": "Frits Karmen", "leerlingNummer": 123124125, "email": "FritsKarmen@website.com", "mentor": "Thijs"}
 var leerlingen = observable([
     {
@@ -481,23 +495,63 @@ var leerlingen = observable([
     }
 ]);
 
-var leraren = [
-    {"naam": "Peter"},
-    {"naam": "Jos"},
-    {"naam": "Thijs"},
-    {"naam": "Tonny"},
-    {"naam": "Judith"}
-];
+/***
+ *     /$$$$$$$$                                 /$$     /$$                               /$$
+ *    | $$_____/                                | $$    |__/                              | $$
+ *    | $$       /$$   /$$ /$$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$ | $$
+ *    | $$$$$   | $$  | $$| $$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$ |____  $$| $$
+ *    | $$__/   | $$  | $$| $$  \ $$| $$        | $$    | $$| $$  \ $$| $$  \ $$  /$$$$$$$| $$
+ *    | $$      | $$  | $$| $$  | $$| $$        | $$ /$$| $$| $$  | $$| $$  | $$ /$$__  $$| $$
+ *    | $$      |  $$$$$$/| $$  | $$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$|  $$$$$$$| $$
+ *    |__/       \______/ |__/  |__/ \_______/   \___/  |__/ \______/ |__/  |__/ \_______/|__/
+ *
+ *
+ *
+ *                                                                                             /$$
+ *                                                                                            |__/
+ *      /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$/$$$$  /$$$$$$/$$$$  /$$ /$$$$$$$   /$$$$$$
+ *     /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ |____  $$| $$_  $$_  $$| $$_  $$_  $$| $$| $$__  $$ /$$__  $$
+ *    | $$  \ $$| $$  \__/| $$  \ $$| $$  \ $$| $$  \__/  /$$$$$$$| $$ \ $$ \ $$| $$ \ $$ \ $$| $$| $$  \ $$| $$  \ $$
+ *    | $$  | $$| $$      | $$  | $$| $$  | $$| $$       /$$__  $$| $$ | $$ | $$| $$ | $$ | $$| $$| $$  | $$| $$  | $$
+ *    | $$$$$$$/| $$      |  $$$$$$/|  $$$$$$$| $$      |  $$$$$$$| $$ | $$ | $$| $$ | $$ | $$| $$| $$  | $$|  $$$$$$$
+ *    | $$____/ |__/       \______/  \____  $$|__/       \_______/|__/ |__/ |__/|__/ |__/ |__/|__/|__/  |__/ \____  $$
+ *    | $$                           /$$  \ $$                                                               /$$  \ $$
+ *    | $$                          |  $$$$$$/                                                              |  $$$$$$/
+ *    |__/                           \______/                                                                \______/
+ *      /$$$$$$                                  /$$     /$$
+ *     /$$__  $$                                | $$    |__/
+ *    | $$  \__/ /$$   /$$ /$$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+ *    | $$$$    | $$  | $$| $$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
+ *    | $$_/    | $$  | $$| $$  \ $$| $$        | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$
+ *    | $$      | $$  | $$| $$  | $$| $$        | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
+ *    | $$      |  $$$$$$/| $$  | $$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
+ *    |__/       \______/ |__/  |__/ \_______/   \___/  |__/ \______/ |__/  |__/|_______/
+ *
+ *
+ *
+ */
 
-var groepen = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G"
-];
+function collect(list, listItem) {
+    if (list.indexOf(listItem) === -1) {
+        list.push(listItem);
+    }
+    return list;
+}
+
+function property(name) {
+    return function (object) {
+        return object[name];
+    }
+}
+
+function isPropertyEqual (property, value) {
+    return function (object) {
+        return object[property] === value;
+    };
+}
+
+var leraren = leerlingen.data.map(property("mentor")).reduce(collect, []);
+var groepen = leerlingen.data.map(property("groep")).reduce(collect, []).sort();
 
 function vormNaam (leerling) {
     return leerling.voornaam + " " + leerling.achternaam;
@@ -512,15 +566,49 @@ function countWithProperty (array, property, value) {
     }, 0);
 }
 
-function isPropertyEqual (property, value) {
-    return function (object) {
-        return object[property] === value;
-    };
-}
-
 function generateGUID () {
     return Math.random() * Math.pow(2, 64);
 }
+
+/***
+ *                                               /$$
+ *                                              | $$
+ *      /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$ /$$$$$$
+ *     /$$__  $$ /$$__  $$ |____  $$ /$$_____/|_  $$_/
+ *    | $$  \__/| $$$$$$$$  /$$$$$$$| $$        | $$
+ *    | $$      | $$_____/ /$$__  $$| $$        | $$ /$$
+ *    | $$      |  $$$$$$$|  $$$$$$$|  $$$$$$$  |  $$$$/
+ *    |__/       \_______/ \_______/ \_______/   \___/
+ *
+ *
+ *
+ *                                                                                           /$$
+ *                                                                                          | $$
+ *      /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$$
+ *     /$$_____/ /$$__  $$| $$_  $$_  $$ /$$__  $$ /$$__  $$| $$__  $$ /$$__  $$| $$__  $$|_  $$_/   /$$_____/
+ *    | $$      | $$  \ $$| $$ \ $$ \ $$| $$  \ $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$  \ $$  | $$    |  $$$$$$
+ *    | $$      | $$  | $$| $$ | $$ | $$| $$  | $$| $$  | $$| $$  | $$| $$_____/| $$  | $$  | $$ /$$ \____  $$
+ *    |  $$$$$$$|  $$$$$$/| $$ | $$ | $$| $$$$$$$/|  $$$$$$/| $$  | $$|  $$$$$$$| $$  | $$  |  $$$$/ /$$$$$$$/
+ *     \_______/ \______/ |__/ |__/ |__/| $$____/  \______/ |__/  |__/ \_______/|__/  |__/   \___/  |_______/
+ *                                      | $$
+ *                                      | $$
+ *                                      |__/
+ */
+
+/***
+ *                 /$$                 /$$     /$$             /$$     /$$           /$$
+ *                | $$                | $$    |__/            | $$    |__/          | $$
+ *      /$$$$$$$ /$$$$$$    /$$$$$$  /$$$$$$   /$$  /$$$$$$$ /$$$$$$   /$$  /$$$$$$ | $$   /$$
+ *     /$$_____/|_  $$_/   |____  $$|_  $$_/  | $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$  /$$/
+ *    |  $$$$$$   | $$      /$$$$$$$  | $$    | $$|  $$$$$$   | $$    | $$| $$$$$$$$| $$$$$$/
+ *     \____  $$  | $$ /$$ /$$__  $$  | $$ /$$| $$ \____  $$  | $$ /$$| $$| $$_____/| $$_  $$
+ *     /$$$$$$$/  |  $$$$/|  $$$$$$$  |  $$$$/| $$ /$$$$$$$/  |  $$$$/| $$|  $$$$$$$| $$ \  $$
+ *    |_______/    \___/   \_______/   \___/  |__/|_______/    \___/  |__/ \_______/|__/  \__/
+ *
+ *
+ *
+ */
+
 
 var Statistiek = React.createClass({
     getInitialState: function () {
@@ -583,6 +671,20 @@ var Statistiek = React.createClass({
     }
 });
 
+/***
+ *
+ *
+ *      /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$
+ *     /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$| $$__  $$
+ *    | $$  \ $$| $$  \__/| $$  \ $$| $$$$$$$$| $$  \ $$| $$$$$$$$| $$  \ $$
+ *    | $$  | $$| $$      | $$  | $$| $$_____/| $$  | $$| $$_____/| $$  | $$
+ *    |  $$$$$$$| $$      |  $$$$$$/|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$  | $$
+ *     \____  $$|__/       \______/  \_______/| $$____/  \_______/|__/  |__/
+ *     /$$  \ $$                              | $$
+ *    |  $$$$$$/                              | $$
+ *     \______/                               |__/
+ */
+
 var Groep = React.createClass({
     render: function () {
         var classString = "groep";
@@ -633,6 +735,20 @@ var GroepenContainer = React.createClass({
     }
 });
 
+/***
+ *     /$$
+ *    | $$
+ *    | $$  /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$
+ *    | $$ /$$__  $$ /$$__  $$ |____  $$ /$$__  $$ /$$__  $$| $$__  $$
+ *    | $$| $$$$$$$$| $$  \__/  /$$$$$$$| $$  \__/| $$$$$$$$| $$  \ $$
+ *    | $$| $$_____/| $$       /$$__  $$| $$      | $$_____/| $$  | $$
+ *    | $$|  $$$$$$$| $$      |  $$$$$$$| $$      |  $$$$$$$| $$  | $$
+ *    |__/ \_______/|__/       \_______/|__/       \_______/|__/  |__/
+ *
+ *
+ *
+ */
+
 var Leraar = React.createClass({
     render: function () {
         var classString = "foto-leraar";
@@ -681,28 +797,84 @@ var LerarenContainer = React.createClass({
     }
 });
 
+/***
+ *                         /$$                       /$$     /$$                     /$$$$$$$                                /$$
+ *                        | $$                      | $$    |__/                    | $$__  $$                              | $$
+ *      /$$$$$$$  /$$$$$$ | $$  /$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$ | $$  \ $$  /$$$$$$  /$$   /$$  /$$$$$$$| $$$$$$$
+ *     /$$_____/ /$$__  $$| $$ /$$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$| $$$$$$$  /$$__  $$| $$  | $$ /$$_____/| $$__  $$
+ *    |  $$$$$$ | $$$$$$$$| $$| $$$$$$$$| $$        | $$    | $$| $$  \ $$| $$  \ $$| $$__  $$| $$  \__/| $$  | $$|  $$$$$$ | $$  \ $$
+ *     \____  $$| $$_____/| $$| $$_____/| $$        | $$ /$$| $$| $$  | $$| $$  | $$| $$  \ $$| $$      | $$  | $$ \____  $$| $$  | $$
+ *     /$$$$$$$/|  $$$$$$$| $$|  $$$$$$$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$| $$$$$$$/| $$      |  $$$$$$/ /$$$$$$$/| $$  | $$
+ *    |_______/  \_______/|__/ \_______/ \_______/   \___/  |__/ \______/ |__/  |__/|_______/ |__/       \______/ |_______/ |__/  |__/
+ *
+ *
+ *
+ */
+
 var selectionBrush = (function () {
     var brush = Object.create(null);
     brush.mode = "select";
 
+    brush.selected = observable([]);
+
+    function deselect (component) {
+        return function (selected) {
+            var copy = selected;
+            var index = copy.indexOf[component.props.leerling];
+            copy.splice(index, 1);
+            return copy;
+        }
+    }
+
+    function select (component) {
+        return function (selected) {
+            var copy = selected;
+            var index = copy.indexOf(component.props.leerling);
+            if (index === -1) {
+                copy.push(component.props.leerling);
+            }
+            return copy;
+        }
+    }
+
+    function act (component) {
+        if (brush.mode === "select") {
+            brush.selected.update(select(component));
+        } else {
+            brush.selected.update(deselect(component));
+        }
+    }
+
     brush.startSelection = function (isInitialSelected, component) {
-        brush.mode = isInitialSelected ? "deselect" : "select";
+        if (isInitialSelected) {
+            brush.mode = "deselect";
+        } else {
+            brush.mode = "select";
+        }
+        act(component);
     };
 
     brush.paintSelection = function (component) {
+        act(component);
         return brush.mode === "select";
     };
 
-    // brush.select = function (component) {
-    //     brush.selected.push(component);
-    // };
-
-    // brush.deselect = function (component) {
-    //     delete brush[brush.indexOf(component)];
-    // };
-
     return brush;
 }());
+
+/***
+ *     /$$                               /$$ /$$
+ *    | $$                              | $$|__/
+ *    | $$  /$$$$$$   /$$$$$$   /$$$$$$ | $$ /$$ /$$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$
+ *    | $$ /$$__  $$ /$$__  $$ /$$__  $$| $$| $$| $$__  $$ /$$__  $$ /$$__  $$| $$__  $$
+ *    | $$| $$$$$$$$| $$$$$$$$| $$  \__/| $$| $$| $$  \ $$| $$  \ $$| $$$$$$$$| $$  \ $$
+ *    | $$| $$_____/| $$_____/| $$      | $$| $$| $$  | $$| $$  | $$| $$_____/| $$  | $$
+ *    | $$|  $$$$$$$|  $$$$$$$| $$      | $$| $$| $$  | $$|  $$$$$$$|  $$$$$$$| $$  | $$
+ *    |__/ \_______/ \_______/|__/      |__/|__/|__/  |__/ \____  $$ \_______/|__/  |__/
+ *                                                         /$$  \ $$
+ *                                                        |  $$$$$$/
+ *                                                         \______/
+ */
 
 var LeerlingenContainer = React.createClass({
     getInitialState: function () {
@@ -733,13 +905,11 @@ var LeerlingenContainer = React.createClass({
 var Leerling = React.createClass({
     paintSelection: function (event) {
         if (event.buttons === 1) {
-            console.log("Selecting!");
             this.setState({selected: this.props.selectionBrush.paintSelection(this)});
         }
     },
     startSelection: function (event) {
         if (event.buttons === 1) {
-            console.log("Selecting!");
             this.props.selectionBrush.startSelection(this.state.selected, this);
             this.setState({selected: !this.state.selected});
         }
@@ -793,13 +963,41 @@ var NieuwLeerlingForm = React.createClass({
     }
 });
 
+/***
+ *                     /$$ /$$   /$$
+ *                    | $$|__/  | $$
+ *      /$$$$$$   /$$$$$$$ /$$ /$$$$$$    /$$$$$$   /$$$$$$
+ *     /$$__  $$ /$$__  $$| $$|_  $$_/   /$$__  $$ /$$__  $$
+ *    | $$$$$$$$| $$  | $$| $$  | $$    | $$  \ $$| $$  \__/
+ *    | $$_____/| $$  | $$| $$  | $$ /$$| $$  | $$| $$
+ *    |  $$$$$$$|  $$$$$$$| $$  |  $$$$/|  $$$$$$/| $$
+ *     \_______/ \_______/|__/   \___/   \______/ |__/
+ *
+ *
+ *
+ */
+
 var GroepEditor = React.createClass({
     render: function () {
         return (
-            <h3>Groep editor, hier kan je bijvoorbeeld de klas, groep of mentor bij alle geselecteerde leerlingen aanpassen</h3>
+            <h3>Leerling editor, hier kan je je geselecteerde leerling aanpassen. Als je meerdere leerlingen geselecteerd hebt dan pas je al de geselecteerde leerlingen tegelijkertijd aan.</h3>
         );
     }
 });
+
+/***
+ *                                         /$$
+ *                                        | $$
+ *      /$$$$$$   /$$$$$$  /$$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$
+ *     /$$__  $$ /$$__  $$| $$__  $$ /$$__  $$ /$$__  $$ /$$__  $$
+ *    | $$  \__/| $$$$$$$$| $$  \ $$| $$  | $$| $$$$$$$$| $$  \__/
+ *    | $$      | $$_____/| $$  | $$| $$  | $$| $$_____/| $$
+ *    | $$      |  $$$$$$$| $$  | $$|  $$$$$$$|  $$$$$$$| $$
+ *    |__/       \_______/|__/  |__/ \_______/ \_______/|__/
+ *
+ *
+ *
+ */
 
 React.render(
     <LeerlingenContainer leerlingen={leerlingen} selectionBrush={selectionBrush}/>,
@@ -808,7 +1006,7 @@ React.render(
 
 React.render(
     <GroepenContainer groepen={groepen} leerlingen={leerlingen}/>,
-    document.getElementById("leraren")
+    document.getElementById("filters")
 );
 
 React.render(
