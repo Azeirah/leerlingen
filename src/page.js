@@ -54,6 +54,10 @@ function subscriber () {
   return subscriber;
 }
 
+function toType (obj) {
+    return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+}
+
 /***
  *      /$$$$$$  /$$                           /$$             /$$                     /$$
  *     /$$__  $$| $$                          | $$            | $$                    | $$
@@ -1093,18 +1097,35 @@ var GroepEditor = React.createClass({
         return {leerlingen: []};
     },
     render: function () {
-        var lln = this.state.leerlingen.map(function (leerling) {
-            return (
-                <div>
-                    <p>{vormNaam(leerling)}</p>
-                    <br />
-                </div>
-            );
-        });
+        var commons = findCommonValues(this.state.leerlingen);
+        var form;
+        if (commons) {
+            form = commons.map(function (keyvalue) {
+                var key = Object.keys(keyvalue)[0];
+                var value = keyvalue[key];
+                var tpe = toType(value);
+                if (tpe === "number") {
+                    return (
+                        <div>
+                            <label>{key}: </label><input type="number" value={value} />
+                            <br />
+                        </div>
+                    );
+                } else if (tpe === "string") {
+                    return (
+                        <div>
+                            <label>{key}: </label>
+                            <input type="text" value={value} />
+                            <br />
+                        </div>
+                    );
+                }
+            });
+        }
         return (
             <div>
                 <h3>Leerling editor, hier kan je je geselecteerde leerling aanpassen. Als je meerdere leerlingen geselecteerd hebt dan pas je al de geselecteerde leerlingen tegelijkertijd aan.</h3>
-                {lln}
+                <div>{form}</div>
             </div>
         );
     }

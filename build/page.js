@@ -54,6 +54,10 @@ function subscriber () {
   return subscriber;
 }
 
+function toType (obj) {
+    return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+}
+
 /***
  *      /$$$$$$  /$$                           /$$             /$$                     /$$
  *     /$$__  $$| $$                          | $$            | $$                    | $$
@@ -1093,18 +1097,35 @@ var GroepEditor = React.createClass({displayName: 'GroepEditor',
         return {leerlingen: []};
     },
     render: function () {
-        var lln = this.state.leerlingen.map(function (leerling) {
-            return (
-                React.createElement("div", null, 
-                    React.createElement("p", null, vormNaam(leerling)), 
-                    React.createElement("br", null)
-                )
-            );
-        });
+        var commons = findCommonValues(this.state.leerlingen);
+        var form;
+        if (commons) {
+            form = commons.map(function (keyvalue) {
+                var key = Object.keys(keyvalue)[0];
+                var value = keyvalue[key];
+                var tpe = toType(value);
+                if (tpe === "number") {
+                    return (
+                        React.createElement("div", null, 
+                            React.createElement("label", null, key, ": "), React.createElement("input", {type: "number", value: value}), 
+                            React.createElement("br", null)
+                        )
+                    );
+                } else if (tpe === "string") {
+                    return (
+                        React.createElement("div", null, 
+                            React.createElement("label", null, key, ": "), 
+                            React.createElement("input", {type: "text", value: value}), 
+                            React.createElement("br", null)
+                        )
+                    );
+                }
+            });
+        }
         return (
             React.createElement("div", null, 
                 React.createElement("h3", null, "Leerling editor, hier kan je je geselecteerde leerling aanpassen. Als je meerdere leerlingen geselecteerd hebt dan pas je al de geselecteerde leerlingen tegelijkertijd aan."), 
-                lln
+                React.createElement("div", null, form)
             )
         );
     }
