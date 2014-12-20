@@ -820,8 +820,10 @@ var selectionBrush = (function () {
     function deselect (component) {
         return function (selected) {
             var copy = selected;
-            var index = copy.indexOf[component.props.leerling];
-            copy.splice(index, 1);
+            var index = copy.indexOf(component.props.leerling);
+            if (index !== -1) {
+                copy.splice(index, 1);
+            }
             return copy;
         }
     }
@@ -917,6 +919,16 @@ var Leerling = React.createClass({
     getInitialState: function () {
         return {selected: false};
     },
+    componentWillUnmount: function () {
+        this.props.selectionBrush.selected.update(function (selected) {
+            var copy = selected;
+            var index = copy.indexOf(this.props.leerling);
+            if (index !== -1) {
+                copy.splice(index, 1);
+            }
+            return copy;
+        }.bind(this));
+    },
     render: function () {
         var classString = "Leerling";
         classString += this.state.selected ? " selected" : "";
@@ -978,9 +990,30 @@ var NieuwLeerlingForm = React.createClass({
  */
 
 var GroepEditor = React.createClass({
+    componentWillMount: function () {
+        var sub = subscriber();
+        this.props.selectionBrush.selected.register(sub);
+        sub.notify = function (leerlingen) {
+            this.setState({leerlingen: leerlingen});
+        }.bind(this);
+    },
+    getInitialState: function () {
+        return {leerlingen: []};
+    },
     render: function () {
+        var lln = this.state.leerlingen.map(function (leerling) {
+            return (
+                <div>
+                    <p>{vormNaam(leerling)}</p>
+                    <br />
+                </div>
+            );
+        });
         return (
-            <h3>Leerling editor, hier kan je je geselecteerde leerling aanpassen. Als je meerdere leerlingen geselecteerd hebt dan pas je al de geselecteerde leerlingen tegelijkertijd aan.</h3>
+            <div>
+                <h3>Leerling editor, hier kan je je geselecteerde leerling aanpassen. Als je meerdere leerlingen geselecteerd hebt dan pas je al de geselecteerde leerlingen tegelijkertijd aan.</h3>
+                {lln}
+            </div>
         );
     }
 });
@@ -1015,7 +1048,7 @@ React.render(
 );
 
 React.render(
-    <GroepEditor/>,
+    <GroepEditor selectionBrush={selectionBrush}/>,
     document.getElementById("extra")
 );
 
