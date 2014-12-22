@@ -18,7 +18,10 @@ function observable (data) {
   observable.update = function (updateFunction) {
     observable.data = updateFunction(observable.data);
     observable.notify(observable.data);
+    observable.onUpdate ? observable.onUpdate() : null;
   };
+
+  observable.onUpdate;
 
   observable.notify = function () {
     notify();
@@ -591,80 +594,12 @@ var leerlingen = observable([
     }
 ]);
 
-/***
- *     /$$$$$$$$                                 /$$     /$$                               /$$
- *    | $$_____/                                | $$    |__/                              | $$
- *    | $$       /$$   /$$ /$$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$ | $$
- *    | $$$$$   | $$  | $$| $$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$ |____  $$| $$
- *    | $$__/   | $$  | $$| $$  \ $$| $$        | $$    | $$| $$  \ $$| $$  \ $$  /$$$$$$$| $$
- *    | $$      | $$  | $$| $$  | $$| $$        | $$ /$$| $$| $$  | $$| $$  | $$ /$$__  $$| $$
- *    | $$      |  $$$$$$/| $$  | $$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$|  $$$$$$$| $$
- *    |__/       \______/ |__/  |__/ \_______/   \___/  |__/ \______/ |__/  |__/ \_______/|__/
- *
- *
- *
- *                                                                                             /$$
- *                                                                                            |__/
- *      /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$/$$$$  /$$$$$$/$$$$  /$$ /$$$$$$$   /$$$$$$
- *     /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ |____  $$| $$_  $$_  $$| $$_  $$_  $$| $$| $$__  $$ /$$__  $$
- *    | $$  \ $$| $$  \__/| $$  \ $$| $$  \ $$| $$  \__/  /$$$$$$$| $$ \ $$ \ $$| $$ \ $$ \ $$| $$| $$  \ $$| $$  \ $$
- *    | $$  | $$| $$      | $$  | $$| $$  | $$| $$       /$$__  $$| $$ | $$ | $$| $$ | $$ | $$| $$| $$  | $$| $$  | $$
- *    | $$$$$$$/| $$      |  $$$$$$/|  $$$$$$$| $$      |  $$$$$$$| $$ | $$ | $$| $$ | $$ | $$| $$| $$  | $$|  $$$$$$$
- *    | $$____/ |__/       \______/  \____  $$|__/       \_______/|__/ |__/ |__/|__/ |__/ |__/|__/|__/  |__/ \____  $$
- *    | $$                           /$$  \ $$                                                               /$$  \ $$
- *    | $$                          |  $$$$$$/                                                              |  $$$$$$/
- *    |__/                           \______/                                                                \______/
- *      /$$$$$$                                  /$$     /$$
- *     /$$__  $$                                | $$    |__/
- *    | $$  \__/ /$$   /$$ /$$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
- *    | $$$$    | $$  | $$| $$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
- *    | $$_/    | $$  | $$| $$  \ $$| $$        | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$
- *    | $$      | $$  | $$| $$  | $$| $$        | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
- *    | $$      |  $$$$$$/| $$  | $$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
- *    |__/       \______/ |__/  |__/ \_______/   \___/  |__/ \______/ |__/  |__/|_______/
- *
- *
- *
- */
-
-function collect(list, listItem) {
-    if (list.indexOf(listItem) === -1) {
-        list.push(listItem);
-    }
-    return list;
-}
-
-function property(name) {
-    return function (object) {
-        return object[name];
-    }
-}
-
-function isPropertyEqual (property, value) {
-    return function (object) {
-        return object[property] === value;
-    };
-}
+leerlingen.onUpdate = function (leerlingen) {
+    // zend nieuwe leerlingen naar server, that's it!
+};
 
 var leraren = leerlingen.data.map(property("mentor")).reduce(collect, []);
 var groepen = leerlingen.data.map(property("groep")).reduce(collect, []).sort();
-
-function vormNaam (leerling) {
-    return leerling.voornaam + " " + leerling.achternaam;
-}
-
-function countWithProperty (array, property, value) {
-    return array.reduce(function (prev, current) {
-        if (array[property] === value) {
-            prev += 1
-        }
-        return prev;
-    }, 0);
-}
-
-function generateGUID () {
-    return Math.random() * Math.pow(2, 64);
-}
 
 /***
  *                                               /$$
@@ -1091,41 +1026,81 @@ var GroepEditor = React.createClass({displayName: 'GroepEditor',
         this.props.selectionBrush.selected.register(sub);
         sub.notify = function (leerlingen) {
             this.setState({leerlingen: leerlingen});
+            this.setState({aanpassingen: {}});
         }.bind(this);
     },
     getInitialState: function () {
-        return {leerlingen: []};
+        return {leerlingen: [], aanpassingen: {}};
+    },
+    onChange: function (event) {
+        var key           = event.target.getAttribute("data-key");
+        var aanpassingen  = this.state.aanpassingen;
+
+        aanpassingen[key] = parseIfNumberish(event.target.value);
+
+        this.setState({aanpassingen: aanpassingen});
+    },
+    onSubmit: function (event) {
+        var leerling = this.state.leerling;
+        event.preventDefault();
+        this.props.leerlingen.update(function (leerlingen) {
+            var leerlingNummers = this.state.leerlingen.map(function (leerling) {
+                return leerling.leerlingNummer;
+            });
+            leerlingNummers.forEach(function (leerlingNummer) {
+                var aanpassingKeys = Object.keys(this.state.aanpassingen);
+                aanpassingKeys.forEach(function (aanpassingKey) {
+                    var leerlingIndex = leerlingen.findIndex(function (testLeerling) {
+                        return testLeerling.leerlingNummer === leerlingNummer;
+                    });
+                    leerlingen[leerlingIndex][aanpassingKey] = this.state.aanpassingen[aanpassingKey];
+                    // look, a bind line!
+                }.bind(this));
+            }.bind(this));
+            return leerlingen;
+        }.bind(this));
+        return false;
     },
     render: function () {
         var commons = findCommonValues(this.state.leerlingen);
         var form;
+        var error;
+        var errorBericht = "Er zijn geen gelijke velden gevonden :(";
         if (commons) {
             form = commons.map(function (keyvalue) {
+                // beautiful code 10/10
                 var key = Object.keys(keyvalue)[0];
-                var value = keyvalue[key];
-                var tpe = toType(value);
-                if (tpe === "number") {
-                    return (
-                        React.createElement("div", null, 
-                            React.createElement("label", null, key, ": "), React.createElement("input", {type: "number", value: value}), 
-                            React.createElement("br", null)
-                        )
-                    );
-                } else if (tpe === "string") {
-                    return (
-                        React.createElement("div", null, 
-                            React.createElement("label", null, key, ": "), 
-                            React.createElement("input", {type: "text", value: value}), 
-                            React.createElement("br", null)
-                        )
-                    );
+                var value;
+                if (this.state.aanpassingen[key] !== undefined) {
+                    value = this.state.aanpassingen[key];
+                } else {
+                    value = keyvalue[key];
                 }
-            });
+                var type = toType(value);
+                var field;
+                if (type === "number") {
+                    field = React.createElement("input", {type: "number", onChange: this.onChange, value: value, 'data-key': key});
+                } else if (type === "string") {
+                    field = React.createElement("input", {type: "text", onChange: this.onChange, value: value, 'data-key': key});
+                }
+                return (
+                    React.createElement("div", null, 
+                        React.createElement("label", null, key, ": "), field
+                    )
+                );
+            }.bind(this));
+            form.push(React.createElement("input", {type: "submit"}));
+        }
+        if (form && form.length === 0) {
+            error = React.createElement("p", null, errorBericht)
         }
         return (
             React.createElement("div", null, 
                 React.createElement("h3", null, "Leerling editor, hier kan je je geselecteerde leerling aanpassen. Als je meerdere leerlingen geselecteerd hebt dan pas je al de geselecteerde leerlingen tegelijkertijd aan."), 
-                React.createElement("div", null, form)
+                React.createElement("form", {onSubmit: this.onSubmit}, 
+                    form
+                ), 
+                error
             )
         );
     }
@@ -1157,12 +1132,12 @@ React.render(
 
 React.render(
     React.createElement(Statistiek, {leerlingen: leerlingen}),
-    document.getElementById("statistiek")
+    document.getElementById("extra")
 );
 
 React.render(
-    React.createElement(GroepEditor, {selectionBrush: selectionBrush}),
-    document.getElementById("extra")
+    React.createElement(GroepEditor, {selectionBrush: selectionBrush, leerlingen: leerlingen}),
+    document.getElementById("statistiek")
 );
 
 
