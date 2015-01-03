@@ -97,26 +97,31 @@
     background-color: rgba(30, 170, 30, 0.5);
 }
 
+body {
+    margin: 8px;
+    font-family: Helvetica;
+    font-size: .98em;
+}
+
 #leerlingen {
     position: absolute;
     width: 80vw;
     height: 60vh;
-    border: 2px dotted orangered;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
 }
 
 #filters {
     position: absolute;
     right: 0;
-    border: 2px dotted blue;
     width: 18vw;
     height: 60vh;
 }
 
-#statistiek {
+#aggregateEditor {
     position: absolute;
     width: 60vw;
     height: 37vh;
-    border: 2px dotted green;
     bottom: 0;
 }
 
@@ -124,7 +129,6 @@
     position: absolute;
     width: 38vw;
     height: 37vh;
-    border: 2px dotted cyan;
     bottom: 0;
     right: 0;
 }

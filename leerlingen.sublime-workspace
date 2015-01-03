@@ -283,7 +283,7 @@
 			"file": "src/page.js",
 			"settings":
 			{
-				"buffer_size": 22898,
+				"buffer_size": 39534,
 				"line_ending": "Unix"
 			}
 		}
@@ -1154,15 +1154,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 22898,
+						"buffer_size": 39534,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7344,
-								7344
+								5777,
+								5777
 							]
 						],
 						"settings":
@@ -1235,7 +1235,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 15814.0,
+						"translation.y": 3041.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

@@ -215,6 +215,15 @@ var leerlingen = observable([
         "opmerking": ""
     },
     {
+        "voornaam": "Jan",
+        "achternaam": "Toppels",
+        "mentor": "Judith",
+        "email-avans": "jan@toppeltje.nl",
+        "leerlingNummer": 12212332,
+        "groep": "H",
+        "opmerking": "Jan Toppels bestaat niet :|"
+    },
+    {
         "voornaam": "Helemaal",
         "achternaam": "Niemand",
         "mentor": "Thijs",
@@ -598,8 +607,30 @@ leerlingen.onUpdate = function (leerlingen) {
     // zend nieuwe leerlingen naar server, that's it!
 };
 
-var leraren = leerlingen.data.map(property("mentor")).reduce(collect, []);
-var groepen = leerlingen.data.map(property("groep")).reduce(collect, []).sort();
+function verzamelLeraren(leerlingen) {
+    return leerlingen.data.map(property("mentor")).reduce(collect, []);
+}
+
+function verzamelGroepen(leerlingen) {
+    return leerlingen.data.map(property("groep")).reduce(collect, []).sort();
+}
+
+var leraren = observable(verzamelLeraren(leerlingen));
+var groepen = observable(verzamelLeraren(leerlingen));
+
+(function () {
+    var sub = subscriber();
+    leerlingen.register(sub);
+
+    sub.notify = function () {
+        leraren.update(function () {
+            return verzamelLeraren(leerlingen);
+        });
+        groepen.update(function () {
+            return verzamelGroepen(leerlingen);
+        });
+    };
+}());
 
 /***
  *                                               /$$
@@ -640,7 +671,6 @@ var groepen = leerlingen.data.map(property("groep")).reduce(collect, []).sort();
  *
  */
 
-
 var Statistiek = React.createClass({
     getInitialState: function () {
         return {leerlingen: []};
@@ -668,23 +698,16 @@ var Statistiek = React.createClass({
     },
     docentenStatistiek: function () {
         var leerlingenPerDocent = this.leerlingenPerDocent();
-        var docentenStatistiek = (function () {
-            var statistieken = [];
-            var keys = Object.keys(leerlingenPerDocent);
-            keys.forEach(function (leraar, index) {
-                var aantalLeerlingen = leerlingenPerDocent[leraar];
-                if (index !== keys.length - 1) {
-                    statistieken.push(
-                        <span><span className="nummer">{aantalLeerlingen}</span> bij {leraar}, </span>
-                    );
-                } else {
-                    statistieken.push(
-                        <span> en <span className="nummer">{aantalLeerlingen}</span> bij {leraar}.</span>
-                    );
-                }
-            });
-            return statistieken;
-        }());
+
+        docentenStatistiek = Object.keys(leerlingenPerDocent).map(function (leraar, index, array) {
+            var aantalLeerlingen = leerlingenPerDocent[leraar];
+            if (index === array.length - 1) {
+                return <span> en <span className="nummer">{aantalLeerlingen}</span> bij {leraar}.</span>;
+            } else {
+                return <span><span className="nummer">{aantalLeerlingen}</span> bij {leraar}, </span>;
+            }
+        });
+
         return docentenStatistiek;
     },
     render: function () {
@@ -695,7 +718,8 @@ var Statistiek = React.createClass({
         var leerlingenPerDocent = this.leerlingenPerDocent();
         var docentenStatistiek  = this.docentenStatistiek();
         var plural              = leerlingenPerDocent[Object.keys(leerlingenPerDocent)[0]] === 1 ? "hoort" : "horen";
-        var aantalDocenten      = countWithProperty(this.state.leerlingen, "leraar", "Jos");
+        var aantalDocenten      = countWithProperty(this.state.leerlingen, "mentor", "Jos");
+        console.log(aantalDocenten);
         return (
             <p>In totaal zijn er <span className="nummer">{aantalLeerlingen}</span> leerlingen. Van deze leerlingen {plural} er {docentenStatistiek}</p>
         );
@@ -721,7 +745,7 @@ var Groep = React.createClass({
         var classString = "groep";
         classString += this.props.selected ? " selected" : "";
         return (
-            <div className={classString} onClick={this.props.onClick.bind(this, this)}>{this.props.groep}</div>
+            <li className={classString} onClick={this.props.onClick.bind(this, this)}>{this.props.groep}</li>
         );
     }
 });
@@ -747,11 +771,19 @@ var GroepenContainer = React.createClass({
 
         this.props.leerlingen.poke();
     },
+    componentWillMount: function () {
+        var groepSub = subscriber();
+        this.props.groepen.register(groepSub);
+
+        groepSub.notify = function (groepen) {
+            this.setState({groepen: groepen});
+        }.bind(this);
+    },
     getInitialState: function () {
-        return {filter: ""};
+        return {filter: "", groepen: []};
     },
     render: function () {
-        var groepenLijst = this.props.groepen.map(function (groep) {
+        var groepenLijst = this.state.groepen.map(function (groep) {
             var selected = this.state.filter === groep;
             return (
                 <Groep groep={groep} selected={selected} onClick={this.handleClick}/>
@@ -760,7 +792,9 @@ var GroepenContainer = React.createClass({
         return (
             <div className="GroepenContainer">
                 <h2>Groepen</h2>
-                {groepenLijst}
+                <ul>
+                    {groepenLijst}
+                </ul>
             </div>
         );
     }
@@ -923,7 +957,7 @@ var LeerlingenContainer = React.createClass({
     render: function () {
         var leerlingenLijst = this.state.leerlingen.map(function (leerling) {
             return (
-                <Leerling leerling={leerling} key={generateGUID()} selectionBrush={this.props.selectionBrush}></Leerling>
+                <Leerling leerling={leerling} key={this.leerlingNummer} selectionBrush={this.props.selectionBrush}></Leerling>
             );
         }.bind(this));
         return (
@@ -997,11 +1031,16 @@ var NieuwLeerlingForm = React.createClass({
     handleSubmit: function (event) {
         event.preventDefault();
         var target = event.target.querySelector("input");
-        this.props.leerlingen.update(function (lln) {
-            var leln = lln;
-            leln.push(JSON.parse(target.value));
-            return leln;
-        });
+        var nieuweLeerling = JSON.parse(target.value);
+        if (this.props.leerlingen.data.findIndex(isPropertyEqual("leerlingNummer", nieuweLeerling.leerlingNummer)) === -1) {
+            this.props.leerlingen.update(function (lln) {
+                var leln = lln;
+                leln.push(JSON.parse(target.value));
+                return leln;
+            });
+        } else {
+            alert("Je leerling heeft geen uniek leerlingNummer... :|");
+        }
         this.setState({formValue: ""});
     }
 });
@@ -1021,6 +1060,9 @@ var NieuwLeerlingForm = React.createClass({
  */
 
 var GroepEditor = React.createClass({
+    reset: function () {
+        this.setState({aanpassingen: {}});
+    },
     componentWillMount: function () {
         var sub = subscriber();
         this.props.selectionBrush.selected.register(sub);
@@ -1059,7 +1101,7 @@ var GroepEditor = React.createClass({
             }.bind(this));
             return leerlingen;
         }.bind(this));
-        return false;
+        // this.reset();
     },
     render: function () {
         var commons = findCommonValues(this.state.leerlingen);
@@ -1106,6 +1148,17 @@ var GroepEditor = React.createClass({
     }
 });
 
+var FiltersContainer = React.createClass({
+    render: function () {
+        return (
+            <div>
+                <h1 className="filtersTitle">Filters</h1>
+                <GroepenContainer groepen={this.props.groepen} leerlingen={this.props.leerlingen}></GroepenContainer>
+            </div>
+        );
+    }
+});
+
 /***
  *                                         /$$
  *                                        | $$
@@ -1126,7 +1179,7 @@ React.render(
 );
 
 React.render(
-    <GroepenContainer groepen={groepen} leerlingen={leerlingen}/>,
+    <FiltersContainer groepen={groepen} leerlingen={leerlingen}/>,
     document.getElementById("filters")
 );
 
@@ -1137,7 +1190,7 @@ React.render(
 
 React.render(
     <GroepEditor selectionBrush={selectionBrush} leerlingen={leerlingen}/>,
-    document.getElementById("statistiek")
+    document.getElementById("aggregateEditor")
 );
 
 

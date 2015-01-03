@@ -57,12 +57,9 @@ function vormNaam (leerling) {
     return leerling.voornaam + " " + leerling.achternaam;
 }
 
-function countWithProperty (array, property, value) {
-    return array.reduce(function (prev, current) {
-        if (array[property] === value) {
-            prev += 1
-        }
-        return prev;
+function countWithProperty (collection, property, value) {
+    return collection.reduce(function (prev, current) {
+        return current[property] === value ? prev + 1 : prev;
     }, 0);
 }
 
