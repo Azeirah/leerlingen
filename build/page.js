@@ -8,7 +8,7 @@ function observable (data) {
   function notify () {
     var data = observable.data;
     Object.keys(observable.filters).forEach(function (key) {
-        data = observable.filters[key](data);
+        data = observable.filters[key].filter(data);
     });
     observable.subscribers.forEach(function (subscriber) {
       subscriber.notify(data);
@@ -31,12 +31,18 @@ function observable (data) {
     observable.subscribers.push(subscriber);
   };
 
-  observable.registerFilter = function (name, filter) {
-    observable.filters[name] = filter;
+  observable.registerFilter = function (filtername, filtervalue, filterfunction) {
+    // filtername = blokFilter
+    // filtervalue = "a", of "b", of "c" etc...
+    observable.filters[filtername] = {
+        filter: filterfunction,
+        name: filtername,
+        filtervalue: filtervalue
+    };
   };
 
-  observable.unregisterFilter = function (name) {
-    delete observable.filters[name];
+  observable.unregisterFilter = function (filtername) {
+    delete observable.filters[filtername];
   };
 
   observable.poke = function () {
@@ -59,98 +65,6 @@ function subscriber () {
 
 function toType (obj) {
     return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
-}
-
-/***
- *      /$$$$$$  /$$                           /$$             /$$                     /$$
- *     /$$__  $$| $$                          | $$            | $$                    | $$
- *    | $$  \ $$| $$$$$$$   /$$$$$$$  /$$$$$$ | $$ /$$   /$$ /$$$$$$    /$$$$$$       | $$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$
- *    | $$$$$$$$| $$__  $$ /$$_____/ /$$__  $$| $$| $$  | $$|_  $$_/   /$$__  $$      | $$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$
- *    | $$__  $$| $$  \ $$|  $$$$$$ | $$  \ $$| $$| $$  | $$  | $$    | $$$$$$$$      | $$  \ $$| $$  \ $$| $$  \__/| $$  \__/| $$  \ $$| $$  \__/
- *    | $$  | $$| $$  | $$ \____  $$| $$  | $$| $$| $$  | $$  | $$ /$$| $$_____/      | $$  | $$| $$  | $$| $$      | $$      | $$  | $$| $$
- *    | $$  | $$| $$$$$$$/ /$$$$$$$/|  $$$$$$/| $$|  $$$$$$/  |  $$$$/|  $$$$$$$      | $$  | $$|  $$$$$$/| $$      | $$      |  $$$$$$/| $$
- *    |__/  |__/|_______/ |_______/  \______/ |__/ \______/    \___/   \_______/      |__/  |__/ \______/ |__/      |__/       \______/ |__/
- *
- *
- *
- *       /$$                      /$$$$$$  /$$                 /$$
- *      | $$                     /$$__  $$|__/                | $$
- *     /$$$$$$    /$$$$$$       | $$  \__/ /$$ /$$$$$$$   /$$$$$$$
- *    |_  $$_/   /$$__  $$      | $$$$    | $$| $$__  $$ /$$__  $$
- *      | $$    | $$  \ $$      | $$_/    | $$| $$  \ $$| $$  | $$
- *      | $$ /$$| $$  | $$      | $$      | $$| $$  | $$| $$  | $$
- *      |  $$$$/|  $$$$$$/      | $$      | $$| $$  | $$|  $$$$$$$
- *       \___/   \______/       |__/      |__/|__/  |__/ \_______/
- *
- *
- *
- *
- *
- *      /$$$$$$$  /$$$$$$  /$$$$$$/$$$$  /$$$$$$/$$$$   /$$$$$$  /$$$$$$$
- *     /$$_____/ /$$__  $$| $$_  $$_  $$| $$_  $$_  $$ /$$__  $$| $$__  $$
- *    | $$      | $$  \ $$| $$ \ $$ \ $$| $$ \ $$ \ $$| $$  \ $$| $$  \ $$
- *    | $$      | $$  | $$| $$ | $$ | $$| $$ | $$ | $$| $$  | $$| $$  | $$
- *    |  $$$$$$$|  $$$$$$/| $$ | $$ | $$| $$ | $$ | $$|  $$$$$$/| $$  | $$
- *     \_______/ \______/ |__/ |__/ |__/|__/ |__/ |__/ \______/ |__/  |__/
- *
- *
- *
- *                         /$$
- *                        | $$
- *     /$$    /$$ /$$$$$$ | $$ /$$   /$$  /$$$$$$   /$$$$$$$
- *    |  $$  /$$/|____  $$| $$| $$  | $$ /$$__  $$ /$$_____/
- *     \  $$/$$/  /$$$$$$$| $$| $$  | $$| $$$$$$$$|  $$$$$$
- *      \  $$$/  /$$__  $$| $$| $$  | $$| $$_____/ \____  $$
- *       \  $/  |  $$$$$$$| $$|  $$$$$$/|  $$$$$$$ /$$$$$$$/
- *        \_/    \_______/|__/ \______/  \_______/|_______/
- *
- *
- *
- */
-
-function atomEquals (obj1, obj2) {
-  // THIS METHOD IS ONLY GUARANTEED TO WORK WITH SOMETHING CALLED AN ATOM
-  // AN ATOM IS AN OBJECT WITH ONLY ONE KEY-VALUE PAIR, AN INTEGER OR A STRING.
-  // EX: {a: 5}, "5", 0.33, "bla bla bla", but not {a: 5, b: 2}
-  return JSON.stringify(obj1) === JSON.stringify(obj2);
-}
-
-function findIndexOfAtomInArray(array, atom) {
-  for (var i = 0; i < array.length; i++) {
-    if (atomEquals(array[i], atom)) {
-      return i;
-    }
-  }
-  return -1;
-}
-
-function intersect (arrays) {
-  var common = arrays[0];
-  arrays.forEach(function (array) {
-    common = common.filter(function (obj) {
-      return findIndexOfAtomInArray(array, obj) !== -1;
-    });
-  });
-  return common;
-}
-
-function findCommonKeys(objects) {
-  return intersect(objects.map(function (obj) {
-    return Object.keys(obj);
-  }));
-}
-
-function findCommonValues(objects) {
-  var keys = findCommonKeys(objects);
-  var values = objects.map(function (obj) {
-    return keys.map(function (key) {
-      var o = {};
-      o[key] = obj[key];
-      return o;
-    });
-  });
-
-  return intersect(values);
 }
 
 /***
@@ -191,6 +105,14 @@ var leerlingen = observable([
         "voornaam": "Baal",
         "achternaam": "Bobsen",
         "leerlingNummer": 3266980,
+        "groepen": {
+            "2014": {
+                "1": "A",
+                "2": "B",
+                "3": "F",
+                "4": "B"
+            }
+        },
         "email-avans": "baal@prinny.com",
         "mentor": "Peter",
         "groep": "C",
@@ -206,6 +128,26 @@ var leerlingen = observable([
         "mentor": "Judith",
         "opleiding": "TI",
         "major": "ES",
+        "groepen": {
+            "2012": {
+                "1": "A",
+                "2": "B",
+                "3": "F",
+                "4": "B"
+            },
+            "2013": {
+                "1": "D",
+                "2": "B",
+                "3": "C",
+                "4": "G"
+            },
+            "2015": {
+                "1": "H",
+                "2": "B",
+                "3": "D",
+                "4": "E"
+            }
+        },
         "cohort": 2014,
         "vooropleiding": "havo",
         "profiel": "NT",
@@ -603,9 +545,9 @@ var leerlingen = observable([
     }
 ]);
 
-leerlingen.onUpdate = function (leerlingen) {
-    // zend nieuwe leerlingen naar server, that's it!
-};
+// leerlingen.onUpdate = function (leerlingen) {
+//     // zend nieuwe leerlingen naar server, that's it!
+// };
 
 function verzamelLeraren(leerlingen) {
     return leerlingen.data.map(property("mentor")).reduce(collect, []);
@@ -617,6 +559,12 @@ function verzamelGroepen(leerlingen) {
 
 var leraren = observable(verzamelLeraren(leerlingen));
 var groepen = observable(verzamelLeraren(leerlingen));
+var jaren = Object.keys(
+                              set(leerlingen.data.filter(hasProperty("groepen")).
+                              map(property("groepen"))).
+                              reduce(merge)
+                        );
+var blokken = ["1", "2", "3", "4"];
 
 (function () {
     var sub = subscriber();
@@ -740,12 +688,127 @@ var Statistiek = React.createClass({displayName: 'Statistiek',
  *     \______/                               |__/
  */
 
+var Jaar = React.createClass({displayName: 'Jaar',
+    render: function () {
+        var classString = this.props.selected ? " selected" : "";
+        return (
+            React.createElement("li", {className: classString, onClick: this.props.onClick.bind(this, this)}, this.props.jaar)
+        );
+    }
+});
+
+var Blok = React.createClass({displayName: 'Blok',
+    render: function () {
+        var classString = this.props.selected ? " selected" : "";
+        return (
+            React.createElement("li", {className: classString, onClick: this.props.onClick.bind(this, this)}, this.props.blok)
+        );
+    }
+});
+
+var TijdContainer = React.createClass({displayName: 'TijdContainer',
+    getInitialState: function () {
+        return {jaarFilter: new Date().getFullYear().toString(), jaren: jaren, blokken: blokken, blokFilter: "1"};
+    },
+    componentWillMount: function () {
+        var tijdSub = subscriber();
+        this.props.leerlingen.register(tijdSub);
+
+        tijdSub.notify = function (leerlingen) {
+            this.setState({jaren: jaren});
+        }.bind(this);
+    },
+    handleJaarClick: function (jaar) {
+        var jaarNaam;
+
+        this.props.leerlingen.unregisterFilter("jaarfilter");
+        this.setState({jaarFilter: jaar.props.jaar});
+
+        jaarNaam = jaar.props.jaar;
+
+        if (jaarNaam) {
+            if (jaarNaam !== this.state.jaarFilter) {
+                this.activeerJaarFilter();
+            } else {
+                this.setState({jaarFilter: new Date().getFullYear().toString()});
+            }
+        }
+
+        this.props.leerlingen.poke();
+    },
+    activeerBlokFilter: function () {
+        this.props.leerlingen.registerFilter("blokfilter", this.state.blokFilter, function (leerlingen) {
+            var heeftGroepJaarEnBlok = compose(property(this.state.blokFilter), property(this.state.jaarFilter), property("groepen"));
+            return leerlingen.filter(heeftGroepJaarEnBlok);
+        }.bind(this));
+    },
+    activeerJaarFilter: function () {
+        this.props.leerlingen.registerFilter("jaarfilter", this.state.jaarFilter, function (leerlingen) {
+            var heeftGroepEnjaar = compose(property(this.state.jaarFilter), property("groepen"));
+            return leerlingen.filter(heeftGroepEnjaar);
+        }.bind(this));
+    },
+    handleBlokClick: function (blok) {
+        var blokNaam;
+
+        this.props.leerlingen.unregisterFilter("blokfilter");
+        this.setState({blokFilter: blok.props.blok});
+
+        blokNaam = blok.props.blok;
+
+        if (blokNaam) {
+            if (blokNaam !== this.state.blokFilter) {
+                this.activeerBlokFilter();
+            } else {
+                this.setState({blokFilter: "1"});
+            }
+        }
+
+        this.props.leerlingen.poke();
+    },
+    componentDidMount: function () {
+        this.activeerBlokFilter();
+        this.activeerJaarFilter();
+    },
+    render: function () {
+        var jarenLijst = this.state.jaren.map(function (jaar) {
+            var selected = this.state.jaarFilter === jaar;
+            return (
+                React.createElement(Jaar, {jaar: jaar, selected: selected, onClick: this.handleJaarClick})
+            );
+        }, this);
+
+        var blokkenLijst = this.state.blokken.map(function (blok) {
+            var selected = this.state.blokFilter === blok;
+            return (
+                React.createElement(Blok, {blok: blok, selected: selected, onClick: this.handleBlokClick})
+            )
+        }, this);
+
+        return (
+            React.createElement("div", {className: "TijdContainer"}, 
+                React.createElement("h2", null, "Jaar"), 
+                React.createElement("ul", null, 
+                    jarenLijst
+                ), 
+                React.createElement("h2", null, "Blok"), 
+                React.createElement("ul", null, 
+                    blokkenLijst
+                )
+            )
+        );
+    }
+});
+
 var Groep = React.createClass({displayName: 'Groep',
+    getInitialState: function () {
+        return {filter: "", groepen: []};
+    },
     render: function () {
         var classString = "groep";
         classString += this.props.selected ? " selected" : "";
         return (
-            React.createElement("li", {className: classString, onClick: this.props.onClick.bind(this, this)}, this.props.groep)
+            React.createElement("li", {className: classString, onClick: this.props.onClick.bind(this, this)}, "Groep ", this.props.groep)
         );
     }
 });
@@ -754,16 +817,19 @@ var GroepenContainer = React.createClass({displayName: 'GroepenContainer',
     handleClick: function (groep) {
         var groepNaam;
 
-        this.props.leerlingen.unregisterFilter(this.state.filter);
+        this.props.leerlingen.unregisterFilter("groepfilter");
         this.setState({filter: groep.props.groep});
 
         groepNaam = groep.props.groep;
 
         if (groepNaam) {
             if (groepNaam !== this.state.filter) {
-                this.props.leerlingen.registerFilter(groepNaam, function (leerlingen) {
-                    return leerlingen.filter(isPropertyEqual("groep", groepNaam));
-                });
+                this.props.leerlingen.registerFilter("groepfilter", groepNaam, function (leerlingen) {
+                    var blokfiltervalue = this.props.leerlingen.filters["blokfilter"].filtervalue;
+                    var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue
+                    var kloptGroepJaarEnBlok = compose(isPropertyEqual(blokfiltervalue, groepNaam), property(jaarfiltervalue), property("groepen"));
+                    return leerlingen.filter(kloptGroepJaarEnBlok);
+                }.bind(this));
             } else {
                 this.setState({filter: undefined});
             }
@@ -1001,7 +1067,6 @@ var Leerling = React.createClass({displayName: 'Leerling',
         var naam = vormNaam(leerling);
         return (
             React.createElement("div", {className: classString, onMouseEnter: this.paintSelection, onMouseDown: this.startSelection}, 
-                React.createElement("div", {className: "foto-leerling"}), 
                 React.createElement("div", {className: "info-leerling"}, 
                     React.createElement("h4", {className: "naam-leerling"}, naam), 
                     React.createElement("p", {className: "leerlingNummer"}, leerling.leerlingNummer), 
@@ -1153,9 +1218,51 @@ var FiltersContainer = React.createClass({displayName: 'FiltersContainer',
         return (
             React.createElement("div", null, 
                 React.createElement("h1", {className: "filtersTitle"}, "Filters"), 
-                React.createElement(GroepenContainer, {groepen: this.props.groepen, leerlingen: this.props.leerlingen})
+                React.createElement(GroepenContainer, {groepen: this.props.groepen, leerlingen: this.props.leerlingen}), 
+                React.createElement(TijdContainer, {leerlingen: this.props.leerlingen})
             )
         );
+    }
+});
+
+
+/**
+ *
+ *
+ *   /$$$$$$$  /$$$$$$  /$$    /$$ /$$$$$$
+ *  /$$_____/ |____  $$|  $$  /$$//$$__  $$
+ * |  $$$$$$   /$$$$$$$ \  $$/$$/| $$$$$$$$
+ *  \____  $$ /$$__  $$  \  $$$/ | $$_____/
+ *  /$$$$$$$/|  $$$$$$$   \  $/  |  $$$$$$$
+ * |_______/  \_______/    \_/    \_______/
+ *
+ *
+ *
+ */
+
+var Save = React.createClass({displayName: 'Save',
+    getInitialState: function () {
+        return {dirty: true};
+    },
+    componentWillMount: function () {
+        this.props.leerlingen.onUpdate = function () {
+            this.setState({dirty: true});
+        }.bind(this);
+    },
+    onsave: function () {
+        this.setState({dirty: false});
+        alert("fake saved!");
+    },
+    render: function () {
+        if (this.state.dirty) {
+            return (
+                React.createElement("button", {onClick: this.onsave}, "Er zijn onopgeslagen veranderingen")
+            );
+        } else {
+            return (
+                React.createElement("span", null)
+            );
+        }
     }
 });
 
@@ -1184,15 +1291,8 @@ React.render(
 );
 
 React.render(
-    React.createElement(Statistiek, {leerlingen: leerlingen}),
-    document.getElementById("extra")
+    React.createElement(Save, {leerlingen: leerlingen}),
+    document.getElementById("save")
 );
-
-React.render(
-    React.createElement(GroepEditor, {selectionBrush: selectionBrush, leerlingen: leerlingen}),
-    document.getElementById("aggregateEditor")
-);
-
-
 
 leerlingen.poke();

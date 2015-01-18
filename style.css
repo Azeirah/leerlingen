@@ -6,7 +6,7 @@
 
 .LeerlingenContainer {
     width: 80vw;
-    height: 60vh;
+    height: 100vh;
     overflow-y: auto;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -14,19 +14,9 @@
     user-select: none;
 }
 
-.LeerlingenContainer .Leerling:before,
-.LeerlingenContainer .Leerling:after {
-    content: " ";
-    display: table;
-}
-
-.LeerlingenContainer .Leerling:after {
-    clear: both;
-}
-
 .Leerling {
     overflow: hidden;
-    margin: 5px;
+    /*margin: 5px;*/
     display: inline-block;
     /**
      * @padding: 5px;
@@ -34,24 +24,8 @@
      * (breedte / @kolommen) - (2 * @padding)
      */
     word-wrap: break-word;
-    width: calc((100% / 4) - (2 * 5px));
-    height: 100px;
-}
-
-.Leerling .info-leerling {
-    display: inline-block;
-    width: calc(100% - 60px - (2 * 5px));
-}
-
-.foto-leerling {
-    margin: 4px;
-    width: 60px;
-    height: 80px;
-    border: 1px solid black;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 80px;
-    float: left;
+    width: calc((100% / 4.9) - (2 * 5px));
+    height: 70px;
 }
 
 .leerlingNummer {
@@ -105,30 +79,21 @@ body {
 
 #leerlingen {
     position: absolute;
-    width: 80vw;
-    height: 60vh;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    width: 85vw;
+    height: 100vh;
 }
 
 #filters {
     position: absolute;
     right: 0;
-    width: 18vw;
+    width: 12vw;
     height: 60vh;
 }
 
-#aggregateEditor {
-    position: absolute;
-    width: 60vw;
-    height: 37vh;
-    bottom: 0;
-}
-
-#extra {
-    position: absolute;
-    width: 38vw;
-    height: 37vh;
-    bottom: 0;
+#save {
+    position: fixed;
     right: 0;
+    width: 12vw;
+    height: 20px;
+    bottom: 8px;
 }
