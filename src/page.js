@@ -1360,10 +1360,10 @@ var TijdContainer = React.createClass({
             return leerlingen.filter(heeftGroepJaarEnBlok);
         }.bind(this));
     },
-    activeerJaarFilter: function (jaarNaam) {
+    activeerJaarFilter: function () {
         this.props.leerlingen.unregisterFilter("jaarfilter");
-        this.props.leerlingen.registerFilter("jaarfilter", jaarNaam, function (leerlingen) {
-            var heeftGroepEnjaar = compose(property(jaarNaam), property("groepen"));
+        this.props.leerlingen.registerFilter("jaarfilter", this.state.jaarFilter, function (leerlingen) {
+            var heeftGroepEnjaar = compose(property(this.state.jaarFilter), property("groepen"));
             return leerlingen.filter(heeftGroepEnjaar);
         }.bind(this));
     },
@@ -1376,8 +1376,8 @@ var TijdContainer = React.createClass({
         this.props.leerlingen.poke();
     },
     componentDidMount: function () {
-        this.activeerBlokFilter(this.state.jaarFilter, this.state.blokFilter);
-        this.activeerJaarFilter(this.state.jaarFilter);
+        this.activeerBlokFilter();
+        this.activeerJaarFilter();
     },
     render: function () {
         var jarenLijst = this.state.jaren.map(function (jaar) {
