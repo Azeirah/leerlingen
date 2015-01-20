@@ -1,0 +1,1160 @@
+[
+  {
+    "voornaam": "Martijn",
+    "achternaam": "Brekelmans",
+    "leerlingNummer": 2899328,
+    "email-avans": "tijntje_7@msn.com",
+    "mentor": "Jos",
+    "opmerking": "Maakt deze website",
+    "groepen": {
+      "2011": {
+        "1": "C",
+        "2": "E",
+        "3": "C",
+        "4": "G"
+      },
+      "2012": {
+        "1": "D",
+        "2": "H",
+        "3": "H",
+        "4": "E"
+      },
+      "2013": {
+        "1": "E",
+        "2": "G",
+        "3": "B",
+        "4": "G"
+      },
+      "2015": {
+        "1": "A",
+        "2": "G",
+        "3": "H",
+        "4": "A"
+      }
+    }
+  },
+  {
+    "voornaam": "Chris",
+    "achternaam": "Ermans",
+    "leerlingNummer": 2154234,
+    "email-avans": "brian.dams@student.avans.nl",
+    "mentor": "Peter",
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "H",
+        "2": "E",
+        "3": "C",
+        "4": "E"
+      },
+      "2012": {
+        "1": "F",
+        "2": "G",
+        "3": "C",
+        "4": "H"
+      },
+      "2013": {
+        "1": "E",
+        "2": "A",
+        "3": "F",
+        "4": "A"
+      },
+      "2015": {
+        "1": "C",
+        "2": "G",
+        "3": "H",
+        "4": "D"
+      }
+    }
+  },
+  {
+    "voornaam": "Baal",
+    "achternaam": "Bobsen",
+    "leerlingNummer": 3266980,
+    "groepen": {},
+    "email-avans": "baal@prinny.com",
+    "mentor": "Peter",
+    "opmerking": ""
+  },
+  {
+    "voornaam": "Luc",
+    "leerlingNummer": 3700707,
+    "achternaam": "Ackerveken",
+    "tussenvoegsel": "van den",
+    "voorletters": "L.",
+    "gebruikersnaam": "lackerveke",
+    "mentor": "Judith",
+    "opleiding": "TI",
+    "major": "ES",
+    "groepen": {
+      "2011": {
+        "1": "C",
+        "2": "E",
+        "3": "E",
+        "4": "F"
+      },
+      "2013": {
+        "1": "H",
+        "2": "F",
+        "3": "G",
+        "4": "C"
+      }
+    },
+    "cohort": 2014,
+    "vooropleiding": "havo",
+    "profiel": "NT",
+    "email-avans": "l.vandenackerveken@student.avans.nl",
+    "email-eigen": "luc@ackerveken.nl",
+    "opmerking": ""
+  },
+  {
+    "voornaam": "Jan",
+    "achternaam": "Toppels",
+    "mentor": "Judith",
+    "email-avans": "jan@toppeltje.nl",
+    "leerlingNummer": 12212332,
+    "opmerking": "Jan Toppels bestaat niet :|",
+    "groepen": {
+      "2011": {
+        "1": "C",
+        "2": "H",
+        "3": "C",
+        "4": "D"
+      },
+      "2013": {
+        "1": "G",
+        "2": "E",
+        "3": "H",
+        "4": "F"
+      },
+      "2015": {
+        "1": "H",
+        "2": "A",
+        "3": "E",
+        "4": "H"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3147562,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "A",
+        "2": "B",
+        "3": "B",
+        "4": "C"
+      },
+      "2014": {
+        "1": "A",
+        "2": "D",
+        "3": "C",
+        "4": "F"
+      },
+      "2015": {
+        "1": "A",
+        "2": "C",
+        "3": "D",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2143960,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "F",
+        "2": "C",
+        "3": "F",
+        "4": "D"
+      },
+      "2012": {
+        "1": "A",
+        "2": "E",
+        "3": "G",
+        "4": "A"
+      },
+      "2013": {
+        "1": "F",
+        "2": "D",
+        "3": "B",
+        "4": "E"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2760250,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "E",
+        "2": "H",
+        "3": "D",
+        "4": "E"
+      },
+      "2014": {
+        "1": "B",
+        "2": "A",
+        "3": "D",
+        "4": "F"
+      },
+      "2015": {
+        "1": "E",
+        "2": "H",
+        "3": "G",
+        "4": "H"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3925143,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "A",
+        "2": "E",
+        "3": "F",
+        "4": "H"
+      },
+      "2013": {
+        "1": "E",
+        "2": "D",
+        "3": "E",
+        "4": "B"
+      },
+      "2014": {
+        "1": "G",
+        "2": "C",
+        "3": "H",
+        "4": "D"
+      },
+      "2015": {
+        "1": "H",
+        "2": "E",
+        "3": "D",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Wel",
+    "achternaam": "iemand",
+    "mentor": "Judith",
+    "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3815983,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "E",
+        "2": "H",
+        "3": "H",
+        "4": "F"
+      },
+      "2012": {
+        "1": "D",
+        "2": "F",
+        "3": "E",
+        "4": "A"
+      },
+      "2013": {
+        "1": "E",
+        "2": "C",
+        "3": "D",
+        "4": "A"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3465620,
+    "opmerking": "",
+    "groepen": {
+      "2013": {
+        "1": "B",
+        "2": "C",
+        "3": "G",
+        "4": "E"
+      },
+      "2014": {
+        "1": "A",
+        "2": "H",
+        "3": "H",
+        "4": "C"
+      },
+      "2015": {
+        "1": "F",
+        "2": "H",
+        "3": "F",
+        "4": "B"
+      }
+    }
+  },
+  {
+    "voornaam": "Wel",
+    "achternaam": "iemand",
+    "mentor": "Judith",
+    "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2364004,
+    "opmerking": "",
+    "groepen": {}
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3891014,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "H",
+        "2": "A",
+        "3": "B",
+        "4": "D"
+      },
+      "2014": {
+        "1": "A",
+        "2": "A",
+        "3": "D",
+        "4": "B"
+      },
+      "2015": {
+        "1": "C",
+        "2": "H",
+        "3": "B",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Wel",
+    "achternaam": "iemand",
+    "mentor": "Judith",
+    "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3791246,
+    "opmerking": "",
+    "groepen": {
+      "2014": {
+        "1": "E",
+        "2": "A",
+        "3": "A",
+        "4": "F"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3293567,
+    "opmerking": "",
+    "groepen": {
+      "2014": {
+        "1": "D",
+        "2": "E",
+        "3": "B",
+        "4": "A"
+      },
+      "2015": {
+        "1": "F",
+        "2": "F",
+        "3": "G",
+        "4": "D"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3118936,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "F",
+        "2": "C",
+        "3": "C",
+        "4": "E"
+      },
+      "2013": {
+        "1": "B",
+        "2": "B",
+        "3": "F",
+        "4": "A"
+      },
+      "2015": {
+        "1": "H",
+        "2": "H",
+        "3": "C",
+        "4": "F"
+      }
+    }
+  },
+  {
+    "voornaam": "Wel",
+    "achternaam": "iemand",
+    "mentor": "Judith",
+    "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3242225,
+    "opmerking": "",
+    "groepen": {
+      "2013": {
+        "1": "A",
+        "2": "F",
+        "3": "B",
+        "4": "G"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2169471,
+    "opmerking": "",
+    "groepen": {}
+  },
+  {
+    "voornaam": "Wel",
+    "achternaam": "iemand",
+    "mentor": "Judith",
+    "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2784836,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "A",
+        "2": "B",
+        "3": "C",
+        "4": "A"
+      },
+      "2013": {
+        "1": "C",
+        "2": "A",
+        "3": "G",
+        "4": "D"
+      },
+      "2014": {
+        "1": "D",
+        "2": "H",
+        "3": "A",
+        "4": "C"
+      },
+      "2015": {
+        "1": "G",
+        "2": "D",
+        "3": "B",
+        "4": "G"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2900427,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "E",
+        "2": "G",
+        "3": "B",
+        "4": "E"
+      },
+      "2012": {
+        "1": "B",
+        "2": "H",
+        "3": "H",
+        "4": "A"
+      },
+      "2013": {
+        "1": "D",
+        "2": "H",
+        "3": "H",
+        "4": "E"
+      },
+      "2014": {
+        "1": "C",
+        "2": "D",
+        "3": "F",
+        "4": "F"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3013939,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "B",
+        "2": "D",
+        "3": "E",
+        "4": "D"
+      },
+      "2013": {
+        "1": "B",
+        "2": "G",
+        "3": "H",
+        "4": "E"
+      },
+      "2014": {
+        "1": "E",
+        "2": "A",
+        "3": "A",
+        "4": "G"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3410772,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "B",
+        "2": "E",
+        "3": "D",
+        "4": "E"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3279429,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "D",
+        "2": "A",
+        "3": "E",
+        "4": "B"
+      },
+      "2012": {
+        "1": "D",
+        "2": "D",
+        "3": "D",
+        "4": "G"
+      },
+      "2014": {
+        "1": "G",
+        "2": "B",
+        "3": "A",
+        "4": "D"
+      },
+      "2015": {
+        "1": "A",
+        "2": "D",
+        "3": "H",
+        "4": "D"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2537866,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "B",
+        "2": "E",
+        "3": "F",
+        "4": "C"
+      },
+      "2012": {
+        "1": "A",
+        "2": "C",
+        "3": "F",
+        "4": "H"
+      },
+      "2013": {
+        "1": "C",
+        "2": "D",
+        "3": "B",
+        "4": "B"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3001661,
+    "opmerking": "",
+    "groepen": {
+      "2013": {
+        "1": "E",
+        "2": "D",
+        "3": "G",
+        "4": "E"
+      },
+      "2014": {
+        "1": "C",
+        "2": "E",
+        "3": "F",
+        "4": "A"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2334397,
+    "opmerking": "",
+    "groepen": {
+      "2015": {
+        "1": "G",
+        "2": "F",
+        "3": "E",
+        "4": "G"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3722498,
+    "opmerking": "",
+    "groepen": {}
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2325398,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "E",
+        "2": "F",
+        "3": "F",
+        "4": "F"
+      },
+      "2015": {
+        "1": "D",
+        "2": "H",
+        "3": "H",
+        "4": "A"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2265600,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "F",
+        "2": "F",
+        "3": "B",
+        "4": "A"
+      },
+      "2015": {
+        "1": "D",
+        "2": "G",
+        "3": "H",
+        "4": "F"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2611276,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "G",
+        "2": "G",
+        "3": "G",
+        "4": "B"
+      },
+      "2013": {
+        "1": "C",
+        "2": "C",
+        "3": "G",
+        "4": "G"
+      },
+      "2015": {
+        "1": "G",
+        "2": "G",
+        "3": "C",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2678630,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "F",
+        "2": "E",
+        "3": "G",
+        "4": "E"
+      },
+      "2012": {
+        "1": "H",
+        "2": "E",
+        "3": "B",
+        "4": "E"
+      },
+      "2015": {
+        "1": "E",
+        "2": "C",
+        "3": "B",
+        "4": "A"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2449044,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "E",
+        "2": "E",
+        "3": "B",
+        "4": "E"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2797701,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "H",
+        "2": "C",
+        "3": "F",
+        "4": "C"
+      },
+      "2013": {
+        "1": "F",
+        "2": "G",
+        "3": "H",
+        "4": "E"
+      },
+      "2015": {
+        "1": "D",
+        "2": "B",
+        "3": "D",
+        "4": "G"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3787732,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "G",
+        "2": "C",
+        "3": "C",
+        "4": "E"
+      },
+      "2013": {
+        "1": "H",
+        "2": "H",
+        "3": "E",
+        "4": "D"
+      },
+      "2014": {
+        "1": "H",
+        "2": "E",
+        "3": "G",
+        "4": "D"
+      },
+      "2015": {
+        "1": "H",
+        "2": "D",
+        "3": "D",
+        "4": "G"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3888466,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "A",
+        "2": "A",
+        "3": "H",
+        "4": "F"
+      },
+      "2013": {
+        "1": "B",
+        "2": "G",
+        "3": "B",
+        "4": "A"
+      },
+      "2015": {
+        "1": "E",
+        "2": "D",
+        "3": "H",
+        "4": "A"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3763381,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "A",
+        "2": "H",
+        "3": "G",
+        "4": "F"
+      },
+      "2014": {
+        "1": "E",
+        "2": "G",
+        "3": "B",
+        "4": "C"
+      },
+      "2015": {
+        "1": "F",
+        "2": "C",
+        "3": "H",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2740095,
+    "opmerking": "",
+    "groepen": {
+      "2013": {
+        "1": "D",
+        "2": "F",
+        "3": "D",
+        "4": "A"
+      },
+      "2014": {
+        "1": "B",
+        "2": "H",
+        "3": "B",
+        "4": "E"
+      },
+      "2015": {
+        "1": "G",
+        "2": "G",
+        "3": "E",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2813547,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "A",
+        "2": "F",
+        "3": "B",
+        "4": "H"
+      },
+      "2015": {
+        "1": "H",
+        "2": "H",
+        "3": "G",
+        "4": "D"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3960506,
+    "opmerking": "",
+    "groepen": {
+      "2015": {
+        "1": "D",
+        "2": "A",
+        "3": "A",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2821639,
+    "opmerking": "",
+    "groepen": {
+      "2013": {
+        "1": "D",
+        "2": "G",
+        "3": "E",
+        "4": "G"
+      },
+      "2014": {
+        "1": "C",
+        "2": "D",
+        "3": "A",
+        "4": "A"
+      },
+      "2015": {
+        "1": "E",
+        "2": "E",
+        "3": "H",
+        "4": "E"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2967506,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "H",
+        "2": "B",
+        "3": "G",
+        "4": "G"
+      },
+      "2014": {
+        "1": "H",
+        "2": "D",
+        "3": "C",
+        "4": "H"
+      },
+      "2015": {
+        "1": "E",
+        "2": "A",
+        "3": "E",
+        "4": "H"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2549568,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "E",
+        "2": "E",
+        "3": "D",
+        "4": "E"
+      },
+      "2012": {
+        "1": "D",
+        "2": "C",
+        "3": "A",
+        "4": "B"
+      },
+      "2015": {
+        "1": "H",
+        "2": "A",
+        "3": "E",
+        "4": "E"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2496004,
+    "opmerking": "",
+    "groepen": {}
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3096291,
+    "opmerking": "",
+    "groepen": {
+      "2012": {
+        "1": "H",
+        "2": "G",
+        "3": "D",
+        "4": "F"
+      },
+      "2013": {
+        "1": "H",
+        "2": "D",
+        "3": "F",
+        "4": "C"
+      },
+      "2015": {
+        "1": "F",
+        "2": "G",
+        "3": "H",
+        "4": "A"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3332527,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "B",
+        "2": "H",
+        "3": "B",
+        "4": "D"
+      },
+      "2013": {
+        "1": "A",
+        "2": "D",
+        "3": "B",
+        "4": "A"
+      },
+      "2014": {
+        "1": "B",
+        "2": "H",
+        "3": "F",
+        "4": "G"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 3794440,
+    "opmerking": "",
+    "groepen": {
+      "2014": {
+        "1": "A",
+        "2": "B",
+        "3": "D",
+        "4": "D"
+      },
+      "2015": {
+        "1": "F",
+        "2": "B",
+        "3": "G",
+        "4": "C"
+      }
+    }
+  },
+  {
+    "voornaam": "Helemaal",
+    "achternaam": "Niemand",
+    "mentor": "Thijs",
+    "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
+    "leerlingNummer": 2712445,
+    "opmerking": "",
+    "groepen": {
+      "2011": {
+        "1": "F",
+        "2": "F",
+        "3": "A",
+        "4": "H"
+      },
+      "2012": {
+        "1": "C",
+        "2": "G",
+        "3": "D",
+        "4": "H"
+      },
+      "2014": {
+        "1": "F",
+        "2": "H",
+        "3": "F",
+        "4": "G"
+      }
+    }
+  }
+]
