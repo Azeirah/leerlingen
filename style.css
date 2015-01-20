@@ -25,7 +25,7 @@
      */
     word-wrap: break-word;
     width: calc((100% / 4.9) - (2 * 5px));
-    height: 70px;
+    height: 80px;
 }
 
 .leerlingNummer {

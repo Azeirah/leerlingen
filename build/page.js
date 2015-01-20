@@ -1346,54 +1346,38 @@ var TijdContainer = React.createClass({displayName: 'TijdContainer',
         }.bind(this);
     },
     handleJaarClick: function (jaar) {
-        var jaarNaam;
+        var jaarNaam = jaar.props.jaar;
 
-        this.setState({jaarFilter: jaar.props.jaar});
-
-        jaarNaam = jaar.props.jaar;
-
-        if (jaarNaam) {
-            if (jaarNaam !== this.state.jaarFilter) {
-                this.activeerJaarFilter();
-            } else {
-                this.setState({jaarFilter: new Date().getFullYear().toString()});
-            }
-        }
+        this.setState({jaarFilter: jaarNaam});
+        this.activeerJaarFilter(jaarNaam);
 
         this.props.leerlingen.poke();
     },
     activeerBlokFilter: function () {
+        this.props.leerlingen.unregisterFilter("blokfilter");
         this.props.leerlingen.registerFilter("blokfilter", this.state.blokFilter, function (leerlingen) {
             var heeftGroepJaarEnBlok = compose(property(this.state.blokFilter), property(this.state.jaarFilter), property("groepen"));
             return leerlingen.filter(heeftGroepJaarEnBlok);
         }.bind(this));
     },
-    activeerJaarFilter: function () {
-        this.props.leerlingen.registerFilter("jaarfilter", this.state.jaarFilter, function (leerlingen) {
-            var heeftGroepEnjaar = compose(property(this.state.jaarFilter), property("groepen"));
+    activeerJaarFilter: function (jaarNaam) {
+        this.props.leerlingen.unregisterFilter("jaarfilter");
+        this.props.leerlingen.registerFilter("jaarfilter", jaarNaam, function (leerlingen) {
+            var heeftGroepEnjaar = compose(property(jaarNaam), property("groepen"));
             return leerlingen.filter(heeftGroepEnjaar);
         }.bind(this));
     },
     handleBlokClick: function (blok) {
-        var blokNaam;
+        var blokNaam = blok.props.blok;
 
-        this.setState({blokFilter: blok.props.blok});
-
-        blokNaam = blok.props.blok;
-
-        if (blokNaam) {
-            if (blokNaam !== this.state.blokFilter) {
-                this.activeerBlokFilter();
-            } else {
-                this.setState({blokFilter: "1"});
-            }
-        }
+        this.setState({blokFilter: blokNaam});
+        this.activeerBlokFilter();
 
         this.props.leerlingen.poke();
     },
     componentDidMount: function () {
-        this.activeerBlokFilter();
-        this.activeerJaarFilter();
+        this.activeerBlokFilter(this.state.jaarFilter, this.state.blokFilter);
+        this.activeerJaarFilter(this.state.jaarFilter);
     },
     render: function () {
         var jarenLijst = this.state.jaren.map(function (jaar) {
@@ -1455,6 +1439,9 @@ var Groep = React.createClass({displayName: 'Groep',
     onDragExit: function (event) {
         this.setState({drag: false});
     },
+    click: function (event) {
+        this.props.onClick.apply(this, this);
+    },
     render: function () {
         var classString = "groep";
         classString += this.props.selected ? " selected" : "";
@@ -1467,7 +1454,7 @@ var Groep = React.createClass({displayName: 'Groep',
             "border": border
         };
         return (
-            React.createElement("li", {style: groepStyle, className: classString, onDragExit: this.onDragExit, onDrop: this.onDragDrop, onDragOver: this.dragOver, onDragEnter: this.dragEnter, onClick: this.props.onClick.bind(this, this)}, "Groep ", React.createElement("span", {style: characterStyle}, this.props.groep))
+            React.createElement("li", {style: groepStyle, className: classString, onDragExit: this.onDragExit, onDrop: this.onDragDrop, onDragOver: this.dragOver, onDragEnter: this.dragEnter, onClick: this.click}, "Groep ", React.createElement("span", {style: characterStyle}, this.props.groep))
         );
     }
 });
@@ -1635,12 +1622,16 @@ var GroepDraggable = React.createClass({displayName: 'GroepDraggable',
     drag: function (event) {
         event.dataTransfer.setData("groep", this.props.groep);
     },
+    click: function (event) {
+        // prevents selecting the underlying student
+        event.stopPropagation();
+    },
     render: function () {
         var style = {
             "color": colorFromCharacter(this.props.groep, groepen.data, 1)
         };
         return (
-            React.createElement("div", {className: "groepDraggable", draggable: "true", style: style, onDragStart: this.drag, onMouseEnter: this.mouseEnter, onMouseLeave: this.mouseLeave}, this.props.groep)
+            React.createElement("div", {className: "groepDraggable", draggable: "true", style: style, onMouseDown: this.click, onDragStart: this.drag, onMouseEnter: this.mouseEnter, onMouseLeave: this.mouseLeave}, this.props.groep)
         );
     }
 });
@@ -1676,7 +1667,7 @@ var Leerling = React.createClass({displayName: 'Leerling',
         var leerling = this.props.leerling;
         var naam = vormNaam(leerling);
         var blokfiltervalue = this.props.leerlingen.filters["blokfilter"].filtervalue;
-        var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue
+        var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue;
         var groep = this.props.leerling.groepen[jaarfiltervalue][blokfiltervalue];
         var backgroundColor = this.state.selected ? {
             "backgroundColor": colorFromCharacter(groep, groepen.data, 0.3)
