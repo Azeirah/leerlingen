@@ -1276,6 +1276,28 @@ var blokken = ["1", "2", "3", "4"];
     };
 }());
 
+function makeImageFromNames (names) {
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+    var fontHeight = 15;
+    var width = 190;
+    var height = names.length * 15 + 40;
+    canvas.width = width;
+    canvas.height = height;
+
+    ctx.font = "bold 15px Helvetica";
+
+    names.forEach(function (name, index) {
+      ctx.fillText(name, 4, index * fontHeight + fontHeight);
+    });
+
+    return {
+        canvas: canvas,
+        width: width,
+        height: name
+    };
+}
+
 /***
  *                                               /$$
  *                                              | $$
@@ -1440,7 +1462,7 @@ var Groep = React.createClass({
         this.setState({drag: false});
     },
     click: function (event) {
-        this.props.onClick.apply(this, this);
+        this.props.onClick.call(this, this);
     },
     render: function () {
         var classString = "groep";
@@ -1461,27 +1483,28 @@ var Groep = React.createClass({
 
 var GroepenContainer = React.createClass({
     handleClick: function (groep) {
-        var groepNaam;
+        var groepNaam = groep.props.groep;
 
-        this.props.leerlingen.unregisterFilter("groepfilter");
-        this.setState({filter: groep.props.groep});
-
-        groepNaam = groep.props.groep;
-
-        if (groepNaam) {
-            if (groepNaam !== this.state.filter) {
-                this.props.leerlingen.registerFilter("groepfilter", groepNaam, function (leerlingen) {
-                    var blokfiltervalue = this.props.leerlingen.filters["blokfilter"].filtervalue;
-                    var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue;
-                    var kloptGroepJaarEnBlok = compose(isPropertyEqual(blokfiltervalue, groepNaam), property(jaarfiltervalue), property("groepen"));
-                    return leerlingen.filter(kloptGroepJaarEnBlok);
-                }.bind(this));
-            } else {
-                this.setState({filter: undefined});
-            }
+        if (this.state.filter === groepNaam) {
+            this.setState({filter: undefined});
+            this.props.leerlingen.unregisterFilter("groepfilter");
+        } else {
+            this.setState({filter: groepNaam});
+            this.activeerGroepFilter(groepNaam);
         }
 
         this.props.leerlingen.poke();
+    },
+    activeerGroepFilter: function (groepNaam) {
+        if (groepNaam !== undefined) {
+            this.props.leerlingen.unregisterFilter("groepfilter");
+            this.props.leerlingen.registerFilter("groepfilter", groepNaam, function (leerlingen) {
+                var blokfiltervalue = this.props.leerlingen.filters["blokfilter"].filtervalue;
+                var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue;
+                var kloptGroepJaarEnBlok = compose(isPropertyEqual(blokfiltervalue, groepNaam), property(jaarfiltervalue), property("groepen"));
+                return leerlingen.filter(kloptGroepJaarEnBlok);
+            }.bind(this));
+        }
     },
     componentWillMount: function () {
         var groepSub = subscriber();
@@ -1492,7 +1515,7 @@ var GroepenContainer = React.createClass({
         }.bind(this);
     },
     getInitialState: function () {
-        return {filter: "", groepen: []};
+        return {filter: undefined, groepen: []};
     },
     render: function () {
         var groepenLijst = this.state.groepen.map(function (groep) {
@@ -1621,6 +1644,10 @@ var LeerlingenContainer = React.createClass({
 var GroepDraggable = React.createClass({
     drag: function (event) {
         event.dataTransfer.setData("groep", this.props.groep);
+        var names = this.props.selectionBrush.selected.data.map(vormNaam);
+        console.log(names);
+        var canvas = makeImageFromNames(names);
+        event.dataTransfer.setDragImage(canvas.canvas, canvas.width, canvas.height);
     },
     click: function (event) {
         // prevents selecting the underlying student
@@ -1675,7 +1702,7 @@ var Leerling = React.createClass({
         return (
             <div className={classString} onMouseEnter={this.paintSelection} onMouseDown={this.startSelection} style={backgroundColor}>
                 <div className="info-leerling">
-                    <h4 className="naam-leerling">{naam} <GroepDraggable groep={groep}/></h4>
+                    <h4 className="naam-leerling">{naam} <GroepDraggable selectionBrush={this.props.selectionBrush} groep={groep}/></h4>
                     <p className="leerlingNummer">{leerling.leerlingNummer}</p>
                     <p className="email">{leerling["email-avans"]}</p>
                     <p className="opmerking">{leerling.opmerking}</p>
