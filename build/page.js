@@ -69,10 +69,6 @@ function subscriber () {
   return subscriber;
 }
 
-function toType (obj) {
-    return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
-}
-
 /***
  *           /$$             /$$
  *          | $$            | $$
@@ -1370,36 +1366,40 @@ var TijdContainer = React.createClass({displayName: 'TijdContainer',
     handleJaarClick: function (jaar) {
         var jaarNaam = jaar.props.jaar;
 
-        this.setState({jaarFilter: jaarNaam});
-        this.activeerJaarFilter(jaarNaam);
+        if (this.state.jaarFilter !== jaarNaam) {
+            this.setState({jaarFilter: jaarNaam});
+            this.activeerJaarFilter(jaarNaam);
+        }
 
-        this.props.leerlingen.poke();
+        setTimeout(this.props.leerlingen.poke, 15);
     },
-    activeerBlokFilter: function () {
-        this.props.leerlingen.unregisterFilter("blokfilter");
-        this.props.leerlingen.registerFilter("blokfilter", this.state.blokFilter, function (leerlingen) {
-            var heeftGroepJaarEnBlok = compose(property(this.state.blokFilter), property(this.state.jaarFilter), property("groepen"));
+    activeerBlokFilter: function (blokNaam) {
+        this.props.leerlingen.registerFilter("blokfilter", blokNaam, function (leerlingen) {
+            var heeftGroepJaarEnBlok = compose(property(blokNaam), property(this.state.jaarFilter), property("groepen"));
             return leerlingen.filter(heeftGroepJaarEnBlok);
         }.bind(this));
     },
-    activeerJaarFilter: function () {
-        this.props.leerlingen.unregisterFilter("jaarfilter");
-        this.props.leerlingen.registerFilter("jaarfilter", this.state.jaarFilter, function (leerlingen) {
-            var heeftGroepEnjaar = compose(property(this.state.jaarFilter), property("groepen"));
+    activeerJaarFilter: function (jaarNaam) {
+        this.props.leerlingen.registerFilter("jaarfilter", jaarNaam, function (leerlingen) {
+            var heeftGroepEnjaar = compose(property(jaarNaam), property("groepen"));
             return leerlingen.filter(heeftGroepEnjaar);
         }.bind(this));
     },
     handleBlokClick: function (blok) {
         var blokNaam = blok.props.blok;
 
-        this.setState({blokFilter: blokNaam});
-        this.activeerBlokFilter();
+        if (this.state.blokFilter !== blokNaam) {
+            this.setState({blokFilter: blokNaam});
+            this.activeerBlokFilter(blokNaam);
+        }
 
-        this.props.leerlingen.poke();
+        setTimeout(this.props.leerlingen.poke, 15);
     },
     componentDidMount: function () {
-        this.activeerBlokFilter();
-        this.activeerJaarFilter();
+        this.activeerBlokFilter(this.state.blokFilter);
+        this.activeerJaarFilter(this.state.jaarFilter);
+
+        this.props.leerlingen.poke();
     },
     render: function () {
         var jarenLijst = this.state.jaren.map(function (jaar) {
@@ -1645,7 +1645,6 @@ var GroepDraggable = React.createClass({displayName: 'GroepDraggable',
     drag: function (event) {
         event.dataTransfer.setData("groep", this.props.groep);
         var names = this.props.selectionBrush.selected.data.map(vormNaam);
-        console.log(names);
         var canvas = makeImageFromNames(names);
         event.dataTransfer.setDragImage(canvas.canvas, canvas.width, canvas.height);
     },
