@@ -71,10 +71,59 @@
     background-color: rgba(30, 170, 30, 0.5);
 }
 
+.floatRight {
+    float: right;
+}
+
+.bubble {
+    font-weight: bold;
+    position: relative;
+    top: 5px;
+    right: 15px;
+    padding: 3px;
+    border-radius: 50%;
+}
+
 body {
     margin: 8px;
     font-family: Helvetica;
     font-size: .98em;
+}
+
+.saveButton {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: red;
+}
+
+.groepDraggable {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.groepDraggable:before {
+    position: absolute;
+    margin-left: -7px;
+    margin-top: -2px;
+    content: " ";
+    transition: .2s all cubic-bezier(.17,.67,.42,1.51);
+    width: 0;
+    height: 0;
+}
+
+.groepDraggable:hover:before {
+    background-color: rgba(20, 20, 20, .5);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+    /*-moz-animation: bubble .3s;*/
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 #leerlingen {
@@ -95,5 +144,5 @@ body {
     right: 0;
     width: 12vw;
     height: 20px;
-    bottom: 8px;
+    bottom: 40px;
 }

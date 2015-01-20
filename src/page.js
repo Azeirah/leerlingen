@@ -16,7 +16,13 @@ function observable (data) {
   }
 
   observable.update = function (updateFunction) {
+    var oldData = observable.data;
     observable.data = updateFunction(observable.data);
+    if (observable.data === undefined) {
+        throw TypeError("observable.update was updated to undefined, this is not allowed.");
+        observable.data = oldData;
+        return;
+    }
     observable.notify(observable.data);
     observable.onUpdate ? observable.onUpdate() : null;
   };
@@ -89,8 +95,33 @@ var leerlingen = observable([
         "leerlingNummer": 2899328,
         "email-avans": "tijntje_7@msn.com",
         "mentor": "Jos",
-        "groep": "F",
-        "opmerking": "Maakt deze website"
+        "opmerking": "Maakt deze website",
+        "groepen": {
+            "2011": {
+                "1": "C",
+                "2": "E",
+                "3": "C",
+                "4": "G"
+            },
+            "2012": {
+                "1": "D",
+                "2": "H",
+                "3": "H",
+                "4": "E"
+            },
+            "2013": {
+                "1": "E",
+                "2": "G",
+                "3": "B",
+                "4": "G"
+            },
+            "2015": {
+                "1": "G",
+                "2": "G",
+                "3": "H",
+                "4": "A"
+            }
+        }
     },
     {
         "voornaam": "Chris",
@@ -98,24 +129,41 @@ var leerlingen = observable([
         "leerlingNummer": 2154234,
         "email-avans": "brian.dams@student.avans.nl",
         "mentor": "Peter",
-        "groep": "A",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "H",
+                "2": "E",
+                "3": "C",
+                "4": "E"
+            },
+            "2012": {
+                "1": "F",
+                "2": "G",
+                "3": "C",
+                "4": "H"
+            },
+            "2013": {
+                "1": "E",
+                "2": "A",
+                "3": "F",
+                "4": "A"
+            },
+            "2015": {
+                "1": "C",
+                "2": "G",
+                "3": "H",
+                "4": "D"
+            }
+        }
     },
     {
         "voornaam": "Baal",
         "achternaam": "Bobsen",
         "leerlingNummer": 3266980,
-        "groepen": {
-            "2014": {
-                "1": "A",
-                "2": "B",
-                "3": "F",
-                "4": "B"
-            }
-        },
+        "groepen": {},
         "email-avans": "baal@prinny.com",
         "mentor": "Peter",
-        "groep": "C",
         "opmerking": ""
     },
     {
@@ -129,23 +177,17 @@ var leerlingen = observable([
         "opleiding": "TI",
         "major": "ES",
         "groepen": {
-            "2012": {
-                "1": "A",
-                "2": "B",
-                "3": "F",
-                "4": "B"
+            "2011": {
+                "1": "C",
+                "2": "E",
+                "3": "E",
+                "4": "F"
             },
             "2013": {
-                "1": "D",
-                "2": "B",
-                "3": "C",
-                "4": "G"
-            },
-            "2015": {
                 "1": "H",
-                "2": "B",
-                "3": "D",
-                "4": "E"
+                "2": "F",
+                "3": "G",
+                "4": "C"
             }
         },
         "cohort": 2014,
@@ -153,7 +195,6 @@ var leerlingen = observable([
         "profiel": "NT",
         "email-avans": "l.vandenackerveken@student.avans.nl",
         "email-eigen": "luc@ackerveken.nl",
-        "groep": "D",
         "opmerking": ""
     },
     {
@@ -162,8 +203,27 @@ var leerlingen = observable([
         "mentor": "Judith",
         "email-avans": "jan@toppeltje.nl",
         "leerlingNummer": 12212332,
-        "groep": "H",
-        "opmerking": "Jan Toppels bestaat niet :|"
+        "opmerking": "Jan Toppels bestaat niet :|",
+        "groepen": {
+            "2011": {
+                "1": "C",
+                "2": "H",
+                "3": "C",
+                "4": "D"
+            },
+            "2013": {
+                "1": "G",
+                "2": "E",
+                "3": "H",
+                "4": "F"
+            },
+            "2015": {
+                "1": "H",
+                "2": "A",
+                "3": "E",
+                "4": "H"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -171,8 +231,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3147562,
-        "groep": "D",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "A",
+                "2": "B",
+                "3": "B",
+                "4": "C"
+            },
+            "2014": {
+                "1": "A",
+                "2": "D",
+                "3": "C",
+                "4": "F"
+            },
+            "2015": {
+                "1": "A",
+                "2": "C",
+                "3": "D",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -180,8 +259,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2143960,
-        "groep": "B",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "F",
+                "2": "C",
+                "3": "F",
+                "4": "D"
+            },
+            "2012": {
+                "1": "A",
+                "2": "E",
+                "3": "G",
+                "4": "A"
+            },
+            "2013": {
+                "1": "F",
+                "2": "D",
+                "3": "B",
+                "4": "E"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -189,8 +287,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2760250,
-        "groep": "C",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "E",
+                "2": "H",
+                "3": "D",
+                "4": "E"
+            },
+            "2014": {
+                "1": "B",
+                "2": "A",
+                "3": "D",
+                "4": "F"
+            },
+            "2015": {
+                "1": "E",
+                "2": "H",
+                "3": "G",
+                "4": "H"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -198,8 +315,33 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3925143,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "A",
+                "2": "E",
+                "3": "F",
+                "4": "H"
+            },
+            "2013": {
+                "1": "E",
+                "2": "D",
+                "3": "E",
+                "4": "B"
+            },
+            "2014": {
+                "1": "G",
+                "2": "C",
+                "3": "H",
+                "4": "D"
+            },
+            "2015": {
+                "1": "H",
+                "2": "E",
+                "3": "D",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Wel",
@@ -207,8 +349,27 @@ var leerlingen = observable([
         "mentor": "Judith",
         "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3815983,
-        "groep": "D",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "E",
+                "2": "H",
+                "3": "H",
+                "4": "F"
+            },
+            "2012": {
+                "1": "D",
+                "2": "F",
+                "3": "E",
+                "4": "A"
+            },
+            "2013": {
+                "1": "E",
+                "2": "C",
+                "3": "D",
+                "4": "A"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -216,8 +377,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3465620,
-        "groep": "G",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2013": {
+                "1": "B",
+                "2": "C",
+                "3": "G",
+                "4": "E"
+            },
+            "2014": {
+                "1": "A",
+                "2": "H",
+                "3": "H",
+                "4": "C"
+            },
+            "2015": {
+                "1": "F",
+                "2": "H",
+                "3": "F",
+                "4": "B"
+            }
+        }
     },
     {
         "voornaam": "Wel",
@@ -225,8 +405,8 @@ var leerlingen = observable([
         "mentor": "Judith",
         "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2364004,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {}
     },
     {
         "voornaam": "Helemaal",
@@ -234,8 +414,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3891014,
-        "groep": "C",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "H",
+                "2": "A",
+                "3": "B",
+                "4": "D"
+            },
+            "2014": {
+                "1": "A",
+                "2": "A",
+                "3": "D",
+                "4": "B"
+            },
+            "2015": {
+                "1": "C",
+                "2": "H",
+                "3": "B",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Wel",
@@ -243,8 +442,15 @@ var leerlingen = observable([
         "mentor": "Judith",
         "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3791246,
-        "groep": "C",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2014": {
+                "1": "E",
+                "2": "A",
+                "3": "A",
+                "4": "F"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -252,8 +458,21 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3293567,
-        "groep": "D",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2014": {
+                "1": "D",
+                "2": "E",
+                "3": "B",
+                "4": "A"
+            },
+            "2015": {
+                "1": "F",
+                "2": "F",
+                "3": "G",
+                "4": "D"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -261,8 +480,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3118936,
-        "groep": "B",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "F",
+                "2": "C",
+                "3": "C",
+                "4": "E"
+            },
+            "2013": {
+                "1": "B",
+                "2": "B",
+                "3": "F",
+                "4": "A"
+            },
+            "2015": {
+                "1": "H",
+                "2": "H",
+                "3": "C",
+                "4": "F"
+            }
+        }
     },
     {
         "voornaam": "Wel",
@@ -270,8 +508,15 @@ var leerlingen = observable([
         "mentor": "Judith",
         "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3242225,
-        "groep": "F",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2013": {
+                "1": "A",
+                "2": "F",
+                "3": "B",
+                "4": "G"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -279,8 +524,8 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2169471,
-        "groep": "C",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {}
     },
     {
         "voornaam": "Wel",
@@ -288,8 +533,33 @@ var leerlingen = observable([
         "mentor": "Judith",
         "email-avans": "wel-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2784836,
-        "groep": "A",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "A",
+                "2": "B",
+                "3": "C",
+                "4": "A"
+            },
+            "2013": {
+                "1": "C",
+                "2": "A",
+                "3": "G",
+                "4": "D"
+            },
+            "2014": {
+                "1": "D",
+                "2": "H",
+                "3": "A",
+                "4": "C"
+            },
+            "2015": {
+                "1": "G",
+                "2": "D",
+                "3": "B",
+                "4": "G"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -297,8 +567,33 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2900427,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "E",
+                "2": "G",
+                "3": "B",
+                "4": "E"
+            },
+            "2012": {
+                "1": "B",
+                "2": "H",
+                "3": "H",
+                "4": "A"
+            },
+            "2013": {
+                "1": "D",
+                "2": "H",
+                "3": "H",
+                "4": "E"
+            },
+            "2014": {
+                "1": "C",
+                "2": "D",
+                "3": "F",
+                "4": "F"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -306,8 +601,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3013939,
-        "groep": "F",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "B",
+                "2": "D",
+                "3": "E",
+                "4": "D"
+            },
+            "2013": {
+                "1": "B",
+                "2": "G",
+                "3": "H",
+                "4": "E"
+            },
+            "2014": {
+                "1": "E",
+                "2": "A",
+                "3": "A",
+                "4": "G"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -315,8 +629,15 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3410772,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "B",
+                "2": "E",
+                "3": "D",
+                "4": "E"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -324,8 +645,33 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3279429,
-        "groep": "B",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "D",
+                "2": "A",
+                "3": "E",
+                "4": "B"
+            },
+            "2012": {
+                "1": "D",
+                "2": "D",
+                "3": "D",
+                "4": "G"
+            },
+            "2014": {
+                "1": "G",
+                "2": "B",
+                "3": "A",
+                "4": "D"
+            },
+            "2015": {
+                "1": "A",
+                "2": "D",
+                "3": "H",
+                "4": "D"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -333,8 +679,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2537866,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "B",
+                "2": "E",
+                "3": "F",
+                "4": "C"
+            },
+            "2012": {
+                "1": "A",
+                "2": "C",
+                "3": "F",
+                "4": "H"
+            },
+            "2013": {
+                "1": "C",
+                "2": "D",
+                "3": "B",
+                "4": "B"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -342,8 +707,21 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3001661,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2013": {
+                "1": "E",
+                "2": "D",
+                "3": "G",
+                "4": "E"
+            },
+            "2014": {
+                "1": "C",
+                "2": "E",
+                "3": "F",
+                "4": "A"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -351,8 +729,15 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2334397,
-        "groep": "F",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2015": {
+                "1": "G",
+                "2": "F",
+                "3": "E",
+                "4": "G"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -360,8 +745,8 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3722498,
-        "groep": "A",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {}
     },
     {
         "voornaam": "Helemaal",
@@ -369,8 +754,21 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2325398,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "E",
+                "2": "F",
+                "3": "F",
+                "4": "F"
+            },
+            "2015": {
+                "1": "D",
+                "2": "H",
+                "3": "H",
+                "4": "A"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -378,8 +776,21 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2265600,
-        "groep": "D",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "F",
+                "2": "F",
+                "3": "B",
+                "4": "A"
+            },
+            "2015": {
+                "1": "D",
+                "2": "G",
+                "3": "H",
+                "4": "F"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -387,8 +798,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2611276,
-        "groep": "F",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "G",
+                "2": "G",
+                "3": "G",
+                "4": "B"
+            },
+            "2013": {
+                "1": "C",
+                "2": "C",
+                "3": "G",
+                "4": "G"
+            },
+            "2015": {
+                "1": "G",
+                "2": "G",
+                "3": "C",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -396,8 +826,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2678630,
-        "groep": "B",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "F",
+                "2": "E",
+                "3": "G",
+                "4": "E"
+            },
+            "2012": {
+                "1": "H",
+                "2": "E",
+                "3": "B",
+                "4": "E"
+            },
+            "2015": {
+                "1": "E",
+                "2": "C",
+                "3": "B",
+                "4": "A"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -405,8 +854,15 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2449044,
-        "groep": "A",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "E",
+                "2": "E",
+                "3": "B",
+                "4": "E"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -414,8 +870,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2797701,
-        "groep": "F",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "H",
+                "2": "C",
+                "3": "F",
+                "4": "C"
+            },
+            "2013": {
+                "1": "F",
+                "2": "G",
+                "3": "H",
+                "4": "E"
+            },
+            "2015": {
+                "1": "D",
+                "2": "B",
+                "3": "D",
+                "4": "G"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -423,8 +898,33 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3787732,
-        "groep": "A",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "G",
+                "2": "C",
+                "3": "C",
+                "4": "E"
+            },
+            "2013": {
+                "1": "H",
+                "2": "H",
+                "3": "E",
+                "4": "D"
+            },
+            "2014": {
+                "1": "H",
+                "2": "E",
+                "3": "G",
+                "4": "D"
+            },
+            "2015": {
+                "1": "H",
+                "2": "D",
+                "3": "D",
+                "4": "G"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -432,8 +932,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3888466,
-        "groep": "G",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "A",
+                "2": "A",
+                "3": "H",
+                "4": "F"
+            },
+            "2013": {
+                "1": "B",
+                "2": "G",
+                "3": "B",
+                "4": "A"
+            },
+            "2015": {
+                "1": "E",
+                "2": "D",
+                "3": "H",
+                "4": "A"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -441,8 +960,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3763381,
-        "groep": "B",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "A",
+                "2": "H",
+                "3": "G",
+                "4": "F"
+            },
+            "2014": {
+                "1": "E",
+                "2": "G",
+                "3": "B",
+                "4": "C"
+            },
+            "2015": {
+                "1": "F",
+                "2": "C",
+                "3": "H",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -450,8 +988,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2740095,
-        "groep": "C",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2013": {
+                "1": "D",
+                "2": "F",
+                "3": "D",
+                "4": "A"
+            },
+            "2014": {
+                "1": "B",
+                "2": "H",
+                "3": "B",
+                "4": "E"
+            },
+            "2015": {
+                "1": "G",
+                "2": "G",
+                "3": "E",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -459,8 +1016,21 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2813547,
-        "groep": "D",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "A",
+                "2": "F",
+                "3": "B",
+                "4": "H"
+            },
+            "2015": {
+                "1": "H",
+                "2": "H",
+                "3": "G",
+                "4": "D"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -468,8 +1038,15 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3960506,
-        "groep": "A",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2015": {
+                "1": "D",
+                "2": "A",
+                "3": "A",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -477,8 +1054,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2821639,
-        "groep": "A",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2013": {
+                "1": "D",
+                "2": "G",
+                "3": "E",
+                "4": "G"
+            },
+            "2014": {
+                "1": "C",
+                "2": "D",
+                "3": "A",
+                "4": "A"
+            },
+            "2015": {
+                "1": "E",
+                "2": "E",
+                "3": "H",
+                "4": "E"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -486,8 +1082,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2967506,
-        "groep": "F",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "H",
+                "2": "B",
+                "3": "G",
+                "4": "G"
+            },
+            "2014": {
+                "1": "H",
+                "2": "D",
+                "3": "C",
+                "4": "H"
+            },
+            "2015": {
+                "1": "E",
+                "2": "A",
+                "3": "E",
+                "4": "H"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -495,8 +1110,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2549568,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "E",
+                "2": "E",
+                "3": "D",
+                "4": "E"
+            },
+            "2012": {
+                "1": "D",
+                "2": "C",
+                "3": "A",
+                "4": "B"
+            },
+            "2015": {
+                "1": "H",
+                "2": "A",
+                "3": "E",
+                "4": "E"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -504,8 +1138,8 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2496004,
-        "groep": "F",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {}
     },
     {
         "voornaam": "Helemaal",
@@ -513,8 +1147,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3096291,
-        "groep": "B",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2012": {
+                "1": "H",
+                "2": "G",
+                "3": "D",
+                "4": "F"
+            },
+            "2013": {
+                "1": "H",
+                "2": "D",
+                "3": "F",
+                "4": "C"
+            },
+            "2015": {
+                "1": "F",
+                "2": "G",
+                "3": "H",
+                "4": "A"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -522,8 +1175,27 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3332527,
-        "groep": "G",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "B",
+                "2": "H",
+                "3": "B",
+                "4": "D"
+            },
+            "2013": {
+                "1": "A",
+                "2": "D",
+                "3": "B",
+                "4": "A"
+            },
+            "2014": {
+                "1": "B",
+                "2": "H",
+                "3": "F",
+                "4": "G"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -531,8 +1203,21 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 3794440,
-        "groep": "E",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2014": {
+                "1": "A",
+                "2": "B",
+                "3": "D",
+                "4": "D"
+            },
+            "2015": {
+                "1": "F",
+                "2": "B",
+                "3": "G",
+                "4": "C"
+            }
+        }
     },
     {
         "voornaam": "Helemaal",
@@ -540,25 +1225,36 @@ var leerlingen = observable([
         "mentor": "Thijs",
         "email-avans": "niemand-verdient@HetOmEenPlaceholder.te.zijn",
         "leerlingNummer": 2712445,
-        "groep": "G",
-        "opmerking": ""
+        "opmerking": "",
+        "groepen": {
+            "2011": {
+                "1": "F",
+                "2": "F",
+                "3": "A",
+                "4": "H"
+            },
+            "2012": {
+                "1": "C",
+                "2": "G",
+                "3": "D",
+                "4": "H"
+            },
+            "2014": {
+                "1": "F",
+                "2": "H",
+                "3": "F",
+                "4": "G"
+            }
+        }
     }
 ]);
-
-// leerlingen.onUpdate = function (leerlingen) {
-//     // zend nieuwe leerlingen naar server, that's it!
-// };
 
 function verzamelLeraren(leerlingen) {
     return leerlingen.data.map(property("mentor")).reduce(collect, []);
 }
 
-function verzamelGroepen(leerlingen) {
-    return leerlingen.data.map(property("groep")).reduce(collect, []).sort();
-}
-
 var leraren = observable(verzamelLeraren(leerlingen));
-var groepen = observable(verzamelLeraren(leerlingen));
+var groepen = observable(["A", "B", "C", "D", "E", "F", "G", "H"]);
 var jaren = Object.keys(
                               set(leerlingen.data.filter(hasProperty("groepen")).
                               map(property("groepen"))).
@@ -575,7 +1271,7 @@ var blokken = ["1", "2", "3", "4"];
             return verzamelLeraren(leerlingen);
         });
         groepen.update(function () {
-            return verzamelGroepen(leerlingen);
+            return ["A", "B", "C", "D", "E", "F", "G", "H"];
         });
     };
 }());
@@ -606,75 +1302,6 @@ var blokken = ["1", "2", "3", "4"];
  */
 
 /***
- *                 /$$                 /$$     /$$             /$$     /$$           /$$
- *                | $$                | $$    |__/            | $$    |__/          | $$
- *      /$$$$$$$ /$$$$$$    /$$$$$$  /$$$$$$   /$$  /$$$$$$$ /$$$$$$   /$$  /$$$$$$ | $$   /$$
- *     /$$_____/|_  $$_/   |____  $$|_  $$_/  | $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$  /$$/
- *    |  $$$$$$   | $$      /$$$$$$$  | $$    | $$|  $$$$$$   | $$    | $$| $$$$$$$$| $$$$$$/
- *     \____  $$  | $$ /$$ /$$__  $$  | $$ /$$| $$ \____  $$  | $$ /$$| $$| $$_____/| $$_  $$
- *     /$$$$$$$/  |  $$$$/|  $$$$$$$  |  $$$$/| $$ /$$$$$$$/  |  $$$$/| $$|  $$$$$$$| $$ \  $$
- *    |_______/    \___/   \_______/   \___/  |__/|_______/    \___/  |__/ \_______/|__/  \__/
- *
- *
- *
- */
-
-var Statistiek = React.createClass({
-    getInitialState: function () {
-        return {leerlingen: []};
-    },
-    componentWillMount: function () {
-        var sub = subscriber();
-        this.props.leerlingen.register(sub);
-        sub.notify = function (lln) {
-            this.setState({leerlingen: lln});
-        }.bind(this);
-    },
-    aantalLeerlingen: function () {
-        return this.state.leerlingen.length;
-    },
-    leerlingenPerDocent: function () {
-        var leerlingenPerDocent = this.state.leerlingen.reduce(function (prev, current) {
-            if (prev.hasOwnProperty(current.mentor)) {
-                prev[current.mentor] += 1;
-            } else {
-                prev[current.mentor] = 1;
-            }
-            return prev;
-        }, {});
-        return leerlingenPerDocent;
-    },
-    docentenStatistiek: function () {
-        var leerlingenPerDocent = this.leerlingenPerDocent();
-
-        docentenStatistiek = Object.keys(leerlingenPerDocent).map(function (leraar, index, array) {
-            var aantalLeerlingen = leerlingenPerDocent[leraar];
-            if (index === array.length - 1) {
-                return <span> en <span className="nummer">{aantalLeerlingen}</span> bij {leraar}.</span>;
-            } else {
-                return <span><span className="nummer">{aantalLeerlingen}</span> bij {leraar}, </span>;
-            }
-        });
-
-        return docentenStatistiek;
-    },
-    render: function () {
-        var docenten = this.state.leerlingen.map(function (leerling) {
-            return leerling.mentor;
-        });
-        var aantalLeerlingen    = this.state.leerlingen.length;
-        var leerlingenPerDocent = this.leerlingenPerDocent();
-        var docentenStatistiek  = this.docentenStatistiek();
-        var plural              = leerlingenPerDocent[Object.keys(leerlingenPerDocent)[0]] === 1 ? "hoort" : "horen";
-        var aantalDocenten      = countWithProperty(this.state.leerlingen, "mentor", "Jos");
-        console.log(aantalDocenten);
-        return (
-            <p>In totaal zijn er <span className="nummer">{aantalLeerlingen}</span> leerlingen. Van deze leerlingen {plural} er {docentenStatistiek}</p>
-        );
-    }
-});
-
-/***
  *
  *
  *      /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$
@@ -692,7 +1319,7 @@ var Jaar = React.createClass({
     render: function () {
         var classString = this.props.selected ? " selected" : "";
         return (
-            <li className={classString} onClick={this.props.onClick.bind(this, this)}>{this.props.jaar}</li>
+            <li className={classString} onClick={this.props.click.bind(this, this)}>{this.props.jaar}</li>
         );
     }
 });
@@ -701,7 +1328,7 @@ var Blok = React.createClass({
     render: function () {
         var classString = this.props.selected ? " selected" : "";
         return (
-            <li className={classString} onClick={this.props.onClick.bind(this, this)}>{this.props.blok}</li>
+            <li className={classString} onClick={this.props.click.bind(this, this)}>{this.props.blok}</li>
         );
     }
 });
@@ -721,7 +1348,6 @@ var TijdContainer = React.createClass({
     handleJaarClick: function (jaar) {
         var jaarNaam;
 
-        this.props.leerlingen.unregisterFilter("jaarfilter");
         this.setState({jaarFilter: jaar.props.jaar});
 
         jaarNaam = jaar.props.jaar;
@@ -751,7 +1377,6 @@ var TijdContainer = React.createClass({
     handleBlokClick: function (blok) {
         var blokNaam;
 
-        this.props.leerlingen.unregisterFilter("blokfilter");
         this.setState({blokFilter: blok.props.blok});
 
         blokNaam = blok.props.blok;
@@ -774,14 +1399,14 @@ var TijdContainer = React.createClass({
         var jarenLijst = this.state.jaren.map(function (jaar) {
             var selected = this.state.jaarFilter === jaar;
             return (
-                <Jaar jaar={jaar} selected={selected} onClick={this.handleJaarClick}/>
+                <Jaar jaar={jaar} selected={selected} click={this.handleJaarClick}/>
             );
         }, this);
 
         var blokkenLijst = this.state.blokken.map(function (blok) {
             var selected = this.state.blokFilter === blok;
             return (
-                <Blok blok={blok} selected={selected} onClick={this.handleBlokClick}></Blok>
+                <Blok blok={blok} selected={selected} click={this.handleBlokClick}></Blok>
             )
         }, this);
 
@@ -802,13 +1427,47 @@ var TijdContainer = React.createClass({
 
 var Groep = React.createClass({
     getInitialState: function () {
-        return {filter: "", groepen: []};
+        return {filter: "", groepen: [], drag: false};
+    },
+    dragEnter: function (event) {
+        this.setState({drag: true});
+        event.preventDefault();
+    },
+    dragOver: function (event) {
+        event.preventDefault();
+    },
+    onDragDrop: function (event) {
+        this.setState({drag: false});
+        var groepTo = this.props.groep;
+        var ids = this.props.selectionBrush.selected.data.map(property("leerlingNummer"));
+        var blokfiltervalue = this.props.leerlingen.filters["blokfilter"].filtervalue;
+        var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue;
+
+        this.props.leerlingen.update(function (leerlingen) {
+            return leerlingen.map(function (leerling) {
+                if (ids.indexOf(leerling.leerlingNummer) !== -1) {
+                    leerling["groepen"][jaarfiltervalue][blokfiltervalue] = groepTo;
+                }
+                return leerling;
+            });
+        })
+    },
+    onDragExit: function (event) {
+        this.setState({drag: false});
     },
     render: function () {
         var classString = "groep";
         classString += this.props.selected ? " selected" : "";
+        var border = this.state.drag ? "2px dotted black" : "";
+        var characterStyle = {
+            "color": colorFromCharacter(this.props.groep, groepen.data, 1),
+            "fontWeight": "bold"
+        };
+        var groepStyle = {
+            "border": border
+        };
         return (
-            <li className={classString} onClick={this.props.onClick.bind(this, this)}>Groep {this.props.groep}</li>
+            <li style={groepStyle} className={classString} onDragExit={this.onDragExit} onDrop={this.onDragDrop} onDragOver={this.dragOver} onDragEnter={this.dragEnter} onClick={this.props.onClick.bind(this, this)}>Groep <span style={characterStyle}>{this.props.groep}</span></li>
         );
     }
 });
@@ -826,7 +1485,7 @@ var GroepenContainer = React.createClass({
             if (groepNaam !== this.state.filter) {
                 this.props.leerlingen.registerFilter("groepfilter", groepNaam, function (leerlingen) {
                     var blokfiltervalue = this.props.leerlingen.filters["blokfilter"].filtervalue;
-                    var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue
+                    var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue;
                     var kloptGroepJaarEnBlok = compose(isPropertyEqual(blokfiltervalue, groepNaam), property(jaarfiltervalue), property("groepen"));
                     return leerlingen.filter(kloptGroepJaarEnBlok);
                 }.bind(this));
@@ -852,7 +1511,7 @@ var GroepenContainer = React.createClass({
         var groepenLijst = this.state.groepen.map(function (groep) {
             var selected = this.state.filter === groep;
             return (
-                <Groep groep={groep} selected={selected} onClick={this.handleClick}/>
+                <Groep groep={groep} leerlingen={this.props.leerlingen} selectionBrush={this.props.selectionBrush} selected={selected} onClick={this.handleClick}/>
             );
         }, this);
         return (
@@ -861,68 +1520,6 @@ var GroepenContainer = React.createClass({
                 <ul>
                     {groepenLijst}
                 </ul>
-            </div>
-        );
-    }
-});
-
-/***
- *     /$$
- *    | $$
- *    | $$  /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$
- *    | $$ /$$__  $$ /$$__  $$ |____  $$ /$$__  $$ /$$__  $$| $$__  $$
- *    | $$| $$$$$$$$| $$  \__/  /$$$$$$$| $$  \__/| $$$$$$$$| $$  \ $$
- *    | $$| $$_____/| $$       /$$__  $$| $$      | $$_____/| $$  | $$
- *    | $$|  $$$$$$$| $$      |  $$$$$$$| $$      |  $$$$$$$| $$  | $$
- *    |__/ \_______/|__/       \_______/|__/       \_______/|__/  |__/
- *
- *
- *
- */
-
-var Leraar = React.createClass({
-    render: function () {
-        var classString = "foto-leraar";
-        classString += this.props.selected ? " selected" : "";
-        return (
-            <div className={classString} onClick={this.props.onClick.bind(this, this)}>{this.props.naam}</div>
-        );
-    }
-});
-
-var LerarenContainer = React.createClass({
-    handleClick: function (leraar) {
-        var leraarNaam;
-
-        this.props.leerlingen.unregisterFilter(this.state.filter);
-        this.setState({filter: leraar.props.naam});
-        leraarNaam = leraar.props.naam;
-
-        if (leraarNaam) {
-            if (leraarNaam !== this.state.filter) {
-                this.props.leerlingen.registerFilter(leraarNaam, function (leerlingen) {
-                    return leerlingen.filter(isPropertyEqual("mentor", leraarNaam));
-                });
-            } else {
-                this.setState({filter: undefined});
-            }
-        }
-
-        this.props.leerlingen.poke();
-    },
-    getInitialState: function () {
-        return {filter: ""};
-    },
-    render: function () {
-        var lerarenLijst = this.props.leraren.map(function (leraar) {
-            var selected = this.state.filter === leraar.naam;
-            return (
-                <Leraar naam={leraar.naam} onClick={this.handleClick} selected={selected}/>
-            );
-        }, this);
-        return (
-            <div className="LerarenContainer">
-                {lerarenLijst}
             </div>
         );
     }
@@ -1023,14 +1620,27 @@ var LeerlingenContainer = React.createClass({
     render: function () {
         var leerlingenLijst = this.state.leerlingen.map(function (leerling) {
             return (
-                <Leerling leerling={leerling} key={this.leerlingNummer} selectionBrush={this.props.selectionBrush}></Leerling>
+                <Leerling leerlingen={this.props.leerlingen} leerling={leerling} key={this.leerlingNummer} selectionBrush={this.props.selectionBrush}></Leerling>
             );
         }.bind(this));
         return (
             <div className="LeerlingenContainer">
                 {leerlingenLijst}
-                <NieuwLeerlingForm leerlingen={this.props.leerlingen}/>
             </div>
+        );
+    }
+});
+
+var GroepDraggable = React.createClass({
+    drag: function (event) {
+        event.dataTransfer.setData("groep", this.props.groep);
+    },
+    render: function () {
+        var style = {
+            "color": colorFromCharacter(this.props.groep, groepen.data, 1)
+        };
+        return (
+            <div className="groepDraggable" draggable="true" style={style} onDragStart={this.drag} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>{this.props.groep}</div>
         );
     }
 });
@@ -1065,149 +1675,20 @@ var Leerling = React.createClass({
         classString += this.state.selected ? " selected" : "";
         var leerling = this.props.leerling;
         var naam = vormNaam(leerling);
+        var blokfiltervalue = this.props.leerlingen.filters["blokfilter"].filtervalue;
+        var jaarfiltervalue = this.props.leerlingen.filters["jaarfilter"].filtervalue
+        var groep = this.props.leerling.groepen[jaarfiltervalue][blokfiltervalue];
+        var backgroundColor = this.state.selected ? {
+            "backgroundColor": colorFromCharacter(groep, groepen.data, 0.3)
+        } : {};
         return (
-            <div className={classString} onMouseEnter={this.paintSelection} onMouseDown={this.startSelection}>
+            <div className={classString} onMouseEnter={this.paintSelection} onMouseDown={this.startSelection} style={backgroundColor}>
                 <div className="info-leerling">
-                    <h4 className="naam-leerling">{naam}</h4>
+                    <h4 className="naam-leerling">{naam} <GroepDraggable groep={groep}/></h4>
                     <p className="leerlingNummer">{leerling.leerlingNummer}</p>
                     <p className="email">{leerling["email-avans"]}</p>
                     <p className="opmerking">{leerling.opmerking}</p>
                 </div>
-            </div>
-        );
-    }
-});
-
-var NieuwLeerlingForm = React.createClass({
-    getInitialState: function () {
-        return {formValue: ""};
-    },
-    render: function () {
-        return (
-            <form className="Leerling" onSubmit={this.handleSubmit}>
-                <div className="aandacht">Voeg nieuwe leerling toe</div>
-                <input type="text" value={this.state.formValue} onChange={this.handleOnChange}/>
-            </form>
-        );
-    },
-    handleOnChange: function (event) {
-        this.setState({formValue: event.target.value});
-    },
-    handleSubmit: function (event) {
-        event.preventDefault();
-        var target = event.target.querySelector("input");
-        var nieuweLeerling = JSON.parse(target.value);
-        if (this.props.leerlingen.data.findIndex(isPropertyEqual("leerlingNummer", nieuweLeerling.leerlingNummer)) === -1) {
-            this.props.leerlingen.update(function (lln) {
-                var leln = lln;
-                leln.push(JSON.parse(target.value));
-                return leln;
-            });
-        } else {
-            alert("Je leerling heeft geen uniek leerlingNummer... :|");
-        }
-        this.setState({formValue: ""});
-    }
-});
-
-/***
- *                     /$$ /$$   /$$
- *                    | $$|__/  | $$
- *      /$$$$$$   /$$$$$$$ /$$ /$$$$$$    /$$$$$$   /$$$$$$
- *     /$$__  $$ /$$__  $$| $$|_  $$_/   /$$__  $$ /$$__  $$
- *    | $$$$$$$$| $$  | $$| $$  | $$    | $$  \ $$| $$  \__/
- *    | $$_____/| $$  | $$| $$  | $$ /$$| $$  | $$| $$
- *    |  $$$$$$$|  $$$$$$$| $$  |  $$$$/|  $$$$$$/| $$
- *     \_______/ \_______/|__/   \___/   \______/ |__/
- *
- *
- *
- */
-
-var GroepEditor = React.createClass({
-    reset: function () {
-        this.setState({aanpassingen: {}});
-    },
-    componentWillMount: function () {
-        var sub = subscriber();
-        this.props.selectionBrush.selected.register(sub);
-        sub.notify = function (leerlingen) {
-            this.setState({leerlingen: leerlingen});
-            this.setState({aanpassingen: {}});
-        }.bind(this);
-    },
-    getInitialState: function () {
-        return {leerlingen: [], aanpassingen: {}};
-    },
-    onChange: function (event) {
-        var key           = event.target.getAttribute("data-key");
-        var aanpassingen  = this.state.aanpassingen;
-
-        aanpassingen[key] = parseIfNumberish(event.target.value);
-
-        this.setState({aanpassingen: aanpassingen});
-    },
-    onSubmit: function (event) {
-        var leerling = this.state.leerling;
-        event.preventDefault();
-        this.props.leerlingen.update(function (leerlingen) {
-            var leerlingNummers = this.state.leerlingen.map(function (leerling) {
-                return leerling.leerlingNummer;
-            });
-            leerlingNummers.forEach(function (leerlingNummer) {
-                var aanpassingKeys = Object.keys(this.state.aanpassingen);
-                aanpassingKeys.forEach(function (aanpassingKey) {
-                    var leerlingIndex = leerlingen.findIndex(function (testLeerling) {
-                        return testLeerling.leerlingNummer === leerlingNummer;
-                    });
-                    leerlingen[leerlingIndex][aanpassingKey] = this.state.aanpassingen[aanpassingKey];
-                    // look, a bind line!
-                }.bind(this));
-            }.bind(this));
-            return leerlingen;
-        }.bind(this));
-        // this.reset();
-    },
-    render: function () {
-        var commons = findCommonValues(this.state.leerlingen);
-        var form;
-        var error;
-        var errorBericht = "Er zijn geen gelijke velden gevonden :(";
-        if (commons) {
-            form = commons.map(function (keyvalue) {
-                // beautiful code 10/10
-                var key = Object.keys(keyvalue)[0];
-                var value;
-                if (this.state.aanpassingen[key] !== undefined) {
-                    value = this.state.aanpassingen[key];
-                } else {
-                    value = keyvalue[key];
-                }
-                var type = toType(value);
-                var field;
-                if (type === "number") {
-                    field = <input type="number" onChange={this.onChange} value={value} data-key={key}/>;
-                } else if (type === "string") {
-                    field = <input type="text"   onChange={this.onChange} value={value} data-key={key}/>;
-                }
-                return (
-                    <div>
-                        <label>{key}: </label>{field}
-                    </div>
-                );
-            }.bind(this));
-            form.push(<input type="submit" />);
-        }
-        if (form && form.length === 0) {
-            error = <p>{errorBericht}</p>
-        }
-        return (
-            <div>
-                <h3>Leerling editor, hier kan je je geselecteerde leerling aanpassen. Als je meerdere leerlingen geselecteerd hebt dan pas je al de geselecteerde leerlingen tegelijkertijd aan.</h3>
-                <form onSubmit={this.onSubmit}>
-                    {form}
-                </form>
-                {error}
             </div>
         );
     }
@@ -1218,7 +1699,7 @@ var FiltersContainer = React.createClass({
         return (
             <div>
                 <h1 className="filtersTitle">Filters</h1>
-                <GroepenContainer groepen={this.props.groepen} leerlingen={this.props.leerlingen}></GroepenContainer>
+                <GroepenContainer groepen={this.props.groepen} leerlingen={this.props.leerlingen} selectionBrush={this.props.selectionBrush}></GroepenContainer>
                 <TijdContainer leerlingen={this.props.leerlingen}></TijdContainer>
             </div>
         );
@@ -1242,7 +1723,7 @@ var FiltersContainer = React.createClass({
 
 var Save = React.createClass({
     getInitialState: function () {
-        return {dirty: true};
+        return {dirty: false};
     },
     componentWillMount: function () {
         this.props.leerlingen.onUpdate = function () {
@@ -1256,7 +1737,7 @@ var Save = React.createClass({
     render: function () {
         if (this.state.dirty) {
             return (
-                <button onClick={this.onsave}>Er zijn onopgeslagen veranderingen</button>
+                <button className="saveButton" onClick={this.onsave}>Er zijn onopgeslagen veranderingen</button>
             );
         } else {
             return (
@@ -1286,7 +1767,7 @@ React.render(
 );
 
 React.render(
-    <FiltersContainer groepen={groepen} leerlingen={leerlingen}/>,
+    <FiltersContainer groepen={groepen} selectionBrush={selectionBrush} leerlingen={leerlingen}/>,
     document.getElementById("filters")
 );
 

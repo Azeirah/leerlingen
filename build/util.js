@@ -196,3 +196,24 @@ function parseIfNumberish(numberEsque) {
     }
     return numberEsque;
 }
+
+// function colorFromCharacter (character, characterList, alpha) {
+//     // takes a character, and a list of all possible choices (character must be in that list)
+//     // ex, colorFromCharacter("a", "abcdefgh")
+//     // will divide the colorspace by length of the list, and assign a color to each split.
+//     var max = Math.pow(16, 6) - 1;
+//     var values = toArray(characterList).map(function (char, index) {
+//         return (max / characterList.length) * index;
+//     });
+//     var c = values[characterList.indexOf(character)];
+//     return "hsla(" + ((c & 0xff0000) >> 16) + ", " + ((c & 0x00ff00) >> 8) + ", " + (c & 0x0000ff) +  ", " + alpha + ")";
+// }
+
+function colorFromCharacter(character, characterList, alpha, lighting) {
+    lighting = lighting || "50%"
+    var min = 20;
+    var max = 255 - min;
+    var step = max / characterList.length;
+    var value = step * characterList.indexOf(character) + 1 + min;
+    return "hsla(" + value + ", 90%, " + lighting + ", " + alpha + ")";
+}
