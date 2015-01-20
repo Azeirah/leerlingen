@@ -48,31 +48,14 @@
     font-size: 0.8em;
 }
 
-.foto-leraar {
-    width: 60px;
-    height: 80px;
-    border: 1px solid black;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 80px;
-}
-
 .aandacht {
     color: rgb(20, 180, 70);
     font-weight: bold;
     font-size: .9em;
 }
 
-.nummer {
-    color: red;
-}
-
 .selected {
     background-color: rgba(30, 170, 30, 0.5);
-}
-
-.floatRight {
-    float: right;
 }
 
 .bubble {
@@ -105,6 +88,7 @@ body {
     display: inline-block;
 }
 
+/*bubble effect on the draggable groups*/
 .groepDraggable:before {
     position: absolute;
     margin-left: -7px;
@@ -121,7 +105,6 @@ body {
     height: 24px;
     border-radius: 50%;
     display: inline-block;
-    /*-moz-animation: bubble .3s;*/
     cursor: pointer;
     border-radius: 50%;
 }
@@ -144,5 +127,5 @@ body {
     right: 0;
     width: 12vw;
     height: 20px;
-    bottom: 40px;
+    bottom: 100px;
 }

@@ -1,6 +1,5 @@
 <?php
     $filename = "leerlingen.json";
-    // $jsonContents = $_POST["leerlingen"];
 
     $jsonContents = file_get_contents("php://input");
 

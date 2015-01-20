@@ -99,7 +99,7 @@ function start () {
     }
 
     var leraren = observable(verzamelLeraren(leerlingen));
-    var groepen = observable(["A", "B", "C", "D", "E", "F", "G", "H"]);
+    var groepen = observable(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
     var jaren = Object.keys(
                                   set(leerlingen.data.filter(hasProperty("groepen")).
                                   map(property("groepen"))).
@@ -601,11 +601,13 @@ function start () {
             leerlingenSaveRequest.open("POST", "save.php");
             leerlingenSaveRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             leerlingenSaveRequest.send(JSON.stringify(leerlingen.data, null, 2));
+            // I could check for success with a consecutive GET request, but I won't.
+            this.setState({dirty: false});
         },
         render: function () {
             if (this.state.dirty) {
                 return (
-                    <button className="saveButton" onClick={this.onsave}>Er zijn onopgeslagen veranderingen</button>
+                    <button className="saveButton" onClick={this.onsave}>Klik om onopgeslagen veranderingen op te slaan</button>
                 );
             } else {
                 return (
